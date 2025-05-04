@@ -1,0 +1,18 @@
+.page {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .page h1 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+  }
+  
+  .page p {
+    color: #333;
+    font-size: 1rem;
+  }
