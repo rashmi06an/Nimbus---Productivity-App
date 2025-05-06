@@ -5,6 +5,7 @@
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    
   }
   
   .page h1 {
@@ -14,5 +15,106 @@
   
   .page p {
     color: #333;
-    font-size: 1rem;
+    font-size: 1rem
   }
+
+  .page_about{
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  
+  .hero-title {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .primary-btn,
+  .secondary-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .primary-btn {
+    background-color: #1e3a8a;
+    color: white;
+  }
+  
+  .secondary-btn {
+    background-color: white;
+    color: #1e3a8a;
+    border: 2px solid #1e3a8a;
+  }
+  
+  .secondary-btn:hover {
+    background-color: #e5eaff;
+  }
+
+  /* Add to src/pages/Page.css */
+
+.page-subtitle {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .task-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .task-input-group input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .primary-btn {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .task-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .task-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  

@@ -3,9 +3,11 @@ import "./Page.css";
 
 function About() {
   return (
-    <div className="page about">
+    <div className="page_about">
       <h1>About FocusFlow</h1>
-      <p>This app helps boost your productivity by combining tasks, notes, and time tracking.</p>
+      <p className="page_p">FocusFlow is a powerful productivity tool designed to help you manage tasks, track time, and boost your efficiency with insightful analytics.</p>
+
+
     </div>
   );
 }

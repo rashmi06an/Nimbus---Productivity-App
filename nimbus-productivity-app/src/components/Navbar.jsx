@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">FocusFlow</div>
@@ -15,5 +15,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar
