@@ -1,4 +1,3 @@
-// src/pages/Home.js
 import React from "react";
 import "./Page.css";
 import homeImage from "../assets/HomePage.png";
@@ -8,7 +7,7 @@ function Home() {
   const testimonials = [
     {
       name: "Ananya Sharma",
-      feedback: "FocusFlow helped me stay organized and on track with my studies!",
+      feedback: "Nimbus helped me stay organized and on track with my studies!",
     },
     {
       name: "Rohan Verma",
@@ -23,11 +22,11 @@ function Home() {
   return (
     <div className="page home">
       <div className="hero">
-        <h1 className="hero-title">Welcome to FocusFlow</h1>
+        <h1 className="hero-title">Welcome to Nimbus</h1>
         <p className="hero-subtitle">Your all-in-one productivity companion.</p>
         <div className="hero-buttons">
           <Link to={"/tasks"}><button className="primary-btn">Get Started</button></Link>
-          <button className="secondary-btn">Learn More</button>
+          <Link to={"/about"}><button className="secondary-btn">Learn More</button></Link>
         </div>
         <div className="home-image-container">
           <img src={homeImage} alt="Home illustration" className="home-image" />

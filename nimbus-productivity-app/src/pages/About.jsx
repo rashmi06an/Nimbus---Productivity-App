@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="about-page">
       <section className="about-hero">
-        <h1>About FocusFlow</h1>
+        <h1>About Nimbus</h1>
         <p>
           FocusFlow is a powerful productivity tool designed to help you manage
           tasks, track time, and boost your efficiency with insightful analytics.
@@ -13,10 +13,10 @@ function About() {
       </section>
 
       <section className="about-body">
-        <h2>Why we built FocusFlow</h2>
+        <h2>Why we built Nimbus</h2>
         <p>
           In today's fast-paced digital world, staying productive and managing
-          time effectively has become more important than ever. FocusFlow was
+          time effectively has become more important than ever. Nimbus was
           built to provide a clean and simple way to organize your workday,
           manage tasks, track how you use your time, and stay focused.
         </p>
@@ -25,7 +25,7 @@ function About() {
           mindful of their priorities, and feel in control — without overwhelm.
         </p>
         <p>
-          FocusFlow combines minimal design with powerful tools like Pomodoro
+          Nimbus combines minimal design with powerful tools like Pomodoro
           timers, daily task lists, and analytics so you can work smarter, not harder.
         </p>
       </section>

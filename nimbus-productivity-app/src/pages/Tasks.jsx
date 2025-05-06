@@ -1,18 +1,17 @@
-// src/pages/Tasks.js
 import React, { useState } from "react";
 import "./Page.css";
 
 function Tasks() {
-  const [tasks, setTasks] = useState(["Complete homepage UI", "Plan notes feature"]);
+  const [tasks, setTasks] = useState(["Task 01", "Task 02"]);
 
   return (
     <div className="page tasks">
       <h1>Task Manager</h1>
-      <p className="page-subtitle">Organize your tasks efficiently.</p>
+      <p className="page-subtitle">Stay on task, stay on track.</p>
 
       <div className="task-input-group">
         <input type="text" placeholder="Add a new task..." />
-        <button className="primary-btn">Add Task</button>
+        <button className="primary_button">Add Task</button>
       </div>
 
       <ul className="task-list">
