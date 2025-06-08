@@ -5,220 +5,348 @@
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  
-}
-
-.page h1 {
+  }
+ 
+ 
+ .page h1 {
   color: #1e3a8a;
   margin-bottom: 10px;
-}
-
-.page p {
+ }
+ 
+ 
+ .page p {
   color: #333;
   font-size: 1rem
-}
-
-.page_about{
+ }
+ 
+ 
+ .page_about{
   max-width: 800px;
   margin: auto;
   background: white;
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.hero {
+ }
+ 
+ 
+ .hero {
   text-align: center;
   padding: 60px 20px;
-}
-
-
-.hero-title {
+ }
+ 
+ 
+ 
+ 
+ .hero-title {
   font-size: 2.5rem;
   color: #1e3a8a;
   margin-bottom: 20px;
-}
-
-.hero-subtitle {
+ }
+ 
+ 
+ .hero-subtitle {
   font-size: 1.2rem;
   color: #555;
   margin-bottom: 30px;
-}
-
-.hero-buttons {
+ }
+ 
+ 
+ .hero-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
-}
-
-.primary-btn,
-.secondary-btn {
+ }
+ 
+ 
+ .primary-btn,
+ .secondary-btn {
   padding: 10px 20px;
   font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.primary_button {
+ }
+ 
+ 
+ .primary_button {
   background-color: #1e3a8a;
   color: white;
-}
-
-.secondary-btn {
+ }
+ 
+ 
+ .secondary-btn {
   background-color: white;
   color: #1e3a8a;
   border: 2px solid #1e3a8a;
-}
-
-.secondary-btn:hover {
+ }
+ 
+ 
+ .secondary-btn:hover {
   background-color: #e5eaff;
-}
-
-
-
-.page-subtitle {
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .page-subtitle {
   color: #555;
   margin-bottom: 20px;
-}
-
-.task-input-group {
+ }
+ 
+ 
+ .task-input-group {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-}
-
-.task-input-group input {
+ }
+ 
+ 
+ .task-input-group input {
   flex: 1;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-}
-
-.primary-btn {
+ }
+ 
+ 
+ .primary-btn {
   background-color: #1e3a8a;
   color: white;
   padding: 10px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-}
-
-.task-list {
+ }
+ 
+ 
+ .task-list {
   list-style: none;
   padding: 0;
-}
-
-.task-list li {
+ }
+ 
+ 
+ .task-list li {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 8px 0;
   border-bottom: 1px solid #eee;
-}
-
-.about-hero {
-background-color:#1e3a8a;
-color: white;
-padding: 40px;
-text-align: center;
-transition-duration: 0.5s;
-
-}
-.about-hero{
-box-shadow: 0 10px 25px rgba(10, 10, 10, 0.15)
-}
-
-.about-hero h1 {
-font-size: 28px;
-margin-bottom: 10px;
-}
-
-.about-hero p {
-font-size: 16px;
-max-width: 600px;
-margin: 0 auto;
-}
-
-
-.about-body {
-background-color: white;
-padding: 30px;
-max-width: 800px;
-margin: 0 auto;
-color: #333;
-}
-
-.about-body h2 {
-font-size: 22px;
-margin-bottom: 10px;
-}
-
-.about-body p {
-margin-bottom: 10px;
-font-size: 15px;
-line-height: 1.5;
-}
-
-
-.features {
-background-color: #f0f4ff;
-padding: 40px;
-text-align: center;
-
-}
-
-.features h2 {
-font-size: 24px;
-color: #1e3a8a;
-margin-bottom: 20px;
-}
-
-.feature-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
-}
-
-.feature-card {
-background-color: white;
-border: 2px solid #1e3a8a;
-border-radius: 8px;
-padding: 20px;
-width: 250px;
-text-align: left;
-transition-duration: 0.5s;
-}
-.feature-card:hover{
-box-shadow: 0 10px 25px rgba(10, 10, 10, 0.30)
-}
-
-.feature-card h3 {
-font-size: 18px;
-color:#1e3a8a;
-margin-bottom: 10px;
-}
-
-.feature-card p {
-font-size: 14px;
-color: #333;
-margin-bottom: 10px;
-}
-
-.feature-card ul {
-padding-left: 18px;
-font-size: 14px;
-color: #444;
-}
-
-.feature-card li {
-margin-bottom: 6px;
-}
-
-
-.completed {
-text-decoration: line-through;
-color: gray;
-}
+ }
+ .task-text {
+  margin-left: 8px;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .timer-input-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+ }
+ 
+ 
+ .timer-page {
+  text-align: center;
+  padding: 40px 20px;
+ }
+ 
+ 
+ .timer-title {
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+ }
+ 
+ 
+ .timer-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+ }
+ 
+ 
+ .timer-input-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ 
+ .timer-input {
+  width: 120px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  border: 1.5px solid #aaa;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.3s ease;
+ }
+ 
+ 
+ .timer-input:focus {
+  border-color: #007bff;
+ }
+ 
+ 
+ .timer-start-btn {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+ }
+ 
+ 
+ .timer-stop-btn {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+ }
+ 
+ 
+ .timer-display {
+  margin-top: 40px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #333;
+  font-family: "Courier New", Courier, monospace;
+  user-select: none;
+ }
+ 
+ 
+ .timer-display.time-up {
+  color: #e74c3c;
+ }
+ 
+ 
+ .about-hero {
+ background-color:#1e3a8a;
+ color: white;
+ padding: 40px;
+ text-align: center;
+ transition-duration: 0.5s;
+ 
+ 
+ }
+ .about-hero{
+ box-shadow: 0 10px 25px rgba(10, 10, 10, 0.15)
+ }
+ 
+ 
+ .about-hero h1 {
+ font-size: 28px;
+ margin-bottom: 10px;
+ }
+ 
+ 
+ .about-hero p {
+ font-size: 16px;
+ max-width: 600px;
+ margin: 0 auto;
+ }
+ 
+ 
+ 
+ 
+ .about-body {
+ background-color: white;
+ padding: 30px;
+ max-width: 800px;
+ margin: 0 auto;
+ color: #333;
+ }
+ 
+ 
+ .about-body h2 {
+ font-size: 22px;
+ margin-bottom: 10px;
+ }
+ 
+ 
+ .about-body p {
+ margin-bottom: 10px;
+ font-size: 15px;
+ line-height: 1.5;
+ }
+ 
+ 
+ 
+ 
+ .features {
+ background-color: #f0f4ff;
+ padding: 40px;
+ text-align: center;
+ 
+ 
+ }
+ 
+ 
+ .features h2 {
+ font-size: 24px;
+ color: #1e3a8a;
+ margin-bottom: 20px;
+ }
+ 
+ 
+ .feature-grid {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 20px;
+ }
+ 
+ 
+ .feature-card {
+ background-color: white;
+ border: 2px solid #1e3a8a;
+ border-radius: 8px;
+ padding: 20px;
+ width: 250px;
+ text-align: left;
+ transition-duration: 0.5s;
+ }
+ .feature-card:hover{
+ box-shadow: 0 10px 25px rgba(10, 10, 10, 0.30)
+ }
+ 
+ 
+ .feature-card h3 {
+ font-size: 18px;
+ color:#1e3a8a;
+ margin-bottom: 10px;
+ }
+ 
+ 
+ .feature-card p {
+ font-size: 14px;
+ color: #333;
+ margin-bottom: 10px;
+ }
+ 
+ 
+ .feature-card ul {
+ padding-left: 18px;
+ font-size: 14px;
+ color: #444;
+ }
+ 
+ 
+ .feature-card li {
+ margin-bottom: 6px;
+ }
+ 
+ 
+ 
+ 
+ .completed {
+ text-decoration: line-through;
+ color: gray;
+ }
+ 
