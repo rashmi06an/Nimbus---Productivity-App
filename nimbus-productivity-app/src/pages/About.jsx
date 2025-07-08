@@ -4,79 +4,85 @@ import "./Page.css";
 function About() {
   return (
     <div className="about-page">
-      <section className="about-hero">
-        <h1>About Nimbus</h1>
-        <p>
-          FocusFlow is a powerful productivity tool designed to help you manage
-          tasks, track time, and boost your efficiency with insightful analytics.
-        </p>
-      </section>
-
-      <section className="about-body">
-        <h2>Why we built Nimbus</h2>
-        <p>
-          In today's fast-paced digital world, staying productive and managing
-          time effectively has become more important than ever. Nimbus was
-          built to provide a clean and simple way to organize your workday,
-          manage tasks, track how you use your time, and stay focused.
-        </p>
-        <p>
-          Our goal is to help individuals and teams reclaim their time, stay
-          mindful of their priorities, and feel in control — without overwhelm.
-        </p>
-        <p>
-          Nimbus combines minimal design with powerful tools like Pomodoro
-          timers, daily task lists, and analytics so you can work smarter, not harder.
-        </p>
-      </section>
-
-      <section className="features">
-        <h2>Key Features</h2>
-        <div className="feature-grid">
-
-          <div className="feature-card">
-            <h3>Smart Task Management</h3>
-            <p>Create, organize, and prioritize tasks with ease.</p>
-            <ul>
-              <li>Task prioritization with visual indicators</li>
-              <li>Custom tags for flexible organization</li>
-              <li>Due date tracking and reminders</li>
-            </ul>
-          </div>
-
-          <div className="feature-card">
-            <h3>Effective Time Tracking</h3>
-            <p>Track time spent on tasks with a single click.</p>
-            <ul>
-              <li>One-click time tracking for any task</li>
-              <li>Detailed time logs and history</li>
-              <li>Pomodoro timer for focused work sessions</li>
-            </ul>
-          </div>
-
-          <div className="feature-card">
-            <h3>Insightful Analytics</h3>
-            <p>Visualize your productivity patterns with reports.</p>
-            <ul>
-              <li>Visual time distribution by task and tag</li>
-              <li>Identify trends and improvements</li>
-              <li>Celebrate progress visually</li>
-            </ul>
-          </div>
-
-          <div className="feature-card">
-            <h3>Smart Notes</h3>
-            <p>Capture and organize your ideas with ease.</p>
-            <ul>
-              <li>Rich text editing capabilities</li>
-              <li>Tag-based organization system</li>
-              <li>Full-text search</li>
-            </ul>
-          </div>
-
+    <section class="about">
+    <h2>About <span class="highlight">Nimbus</span></h2>
+    <p>
+      We believe that better time management leads to better work-life balance.
+      Nimbus is designed to help you understand your work patterns, optimize
+      your productivity, and achieve your goals mcdore efficiently.
+    </p>
+  </section>
+  <section class="features">
+    <h3>Why Choose Nimbus?</h3>
+    <p>Built for modern professionals who want to take control of their time and boost their productivity</p>  
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="icon">⏱️</div>
+        <h4>Smart Time Tracking</h4>
+        <p>Track time automatically with intelligent categorization and insights.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">📋</div>
+        <h4>Task Management</h4>
+        <p>Organize tasks with priorities, due dates, and progress tracking.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">📊</div>
+        <h4>Analytics & Reports</h4>
+        <p>Visualize productivity patterns with detailed charts and metrics.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">⏳</div>
+        <h4>Focus Timer</h4>
+        <p>Pomodoro technique integration for enhanced concentration.</p>
         </div>
-      </section>
     </div>
+  </section>
+  <section class="mission">
+    <h3>Our Mission</h3>
+    <p>
+      At Nimbus, we're on a mission to transform how people manage their time and tasks. We believe that with the right tools and insights, everyone can achieve better work-life balance and accomplish their goals more effectively.
+    </p>
+    <p>
+      Our platform combines intelligent time tracking, intuitive task management, and powerful analytics to give you complete visibility into your productivity patterns. Whether you're a freelancer, team lead, or executive, Nimbus adapts to your workflow.
+    </p>
+  </section>
+  <section className="productivity-tips">
+  <h2>Productivity Tips</h2>
+  <p className="subtitle">
+    Expert strategies to help you get the most out of your time and achieve your goals
+  </p>
+
+  <div className="tips-grid">
+
+    <div className="tip-card">
+      <h3>💡 Time Blocking</h3>
+      <p>Allocate specific time blocks for different types of work to maintain focus and reduce task switching.</p>
+      <div className="tip-pro">
+        <strong>📌 Pro Tip:</strong> Schedule your most important work during your peak energy hours.
+      </div>
+    </div>
+
+    <div className="tip-card">
+      <h3>⏱️ The 2-Minute Rule</h3>
+      <p>If a task takes less than 2 minutes to complete, do it immediately rather than adding it to your to-do list.</p>
+      <div className="tip-pro">
+        <strong>📌 Pro Tip:</strong> This prevents small tasks from accumulating and becoming overwhelming.
+      </div>
+    </div>
+    <div className="tip-card">
+      <h3>📘 Single-Tasking</h3>
+      <p>Focus on one task at a time rather than multitasking, which can reduce productivity by up to 40%.</p>
+    </div>
+
+    <div className="tip-card">
+      <h3>🪞 Review & Reflect</h3>
+      <p>Regularly review your productivity patterns and adjust your approach based on what works best.</p>
+    </div>
+
+  </div>
+</section>
+        </div>
   );
 }
 

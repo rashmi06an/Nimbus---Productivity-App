@@ -3,8 +3,8 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #1e3a8a;
-    color: white;
+    background-color:rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,8 @@
   }
   
   .nav-links li a {
-    color: white;
+    font-style: bold;
+    color: rgb(7, 15, 53);
     text-decoration: none;
     font-weight: 500;
     white-space: nowrap;
