@@ -103,7 +103,7 @@ function Home() {
     </div>
   </div>
 </section>
-
+<div className="name"><h2 className="noname">.</h2></div>
 <section class="cta-section">
   <div class="cta-container">
     <h2>Ready to Transform Your Productivity?</h2>

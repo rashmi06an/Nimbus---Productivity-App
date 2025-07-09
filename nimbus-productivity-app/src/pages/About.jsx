@@ -1,88 +1,160 @@
 import React from "react";
-import "./Page.css";
+import "./about.css";
 
 function About() {
   return (
-    <div className="about-page">
-    <section class="about">
-    <h2>About <span class="highlight">Nimbus</span></h2>
-    <p>
-      We believe that better time management leads to better work-life balance.
-      Nimbus is designed to help you understand your work patterns, optimize
-      your productivity, and achieve your goals mcdore efficiently.
-    </p>
-  </section>
-  <section class="features">
-    <h3>Why Choose Nimbus?</h3>
-    <p>Built for modern professionals who want to take control of their time and boost their productivity</p>  
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="icon">⏱️</div>
-        <h4>Smart Time Tracking</h4>
-        <p>Track time automatically with intelligent categorization and insights.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">📋</div>
-        <h4>Task Management</h4>
-        <p>Organize tasks with priorities, due dates, and progress tracking.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">📊</div>
-        <h4>Analytics & Reports</h4>
-        <p>Visualize productivity patterns with detailed charts and metrics.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">⏳</div>
-        <h4>Focus Timer</h4>
-        <p>Pomodoro technique integration for enhanced concentration.</p>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>About Nimbus</title>
+      <link rel="stylesheet" href="about.css"/>
+    </head>
+    <body>
+    
+  
+      <section class="hero">
+        <h1>About Nimbus</h1>
+        <p class="subtext">Nimbus is a powerful productivity tool designed to help you manage tasks, track time, and boost your efficiency with insightful analytics.</p>
+      </section>
+    
+    
+      <section class="overview">
+        <h2 className="name">Why We Built Nimbus</h2>
+        <div class="content">
+          
+          <p>In today's fast-paced digital world, staying productive and managing time effectively has become more challenging than ever. We created Nimbus to address this challenge by providing a seamless, intuitive platform that combines task management, time tracking, and productivity analytics in one unified experience.</p>
+          <p>Our mission is to help individuals and teams reclaim their time, focus on what matters most, and achieve their goals with less stress and more clarity. We believe that productivity shouldn't feel overwhelming—it should feel empowering.</p>
+          <p>Nimbus was designed with a focus on simplicity and effectiveness. We've carefully crafted each feature to ensure it adds real value to your workflow without unnecessary complexity.</p>
+          
         </div>
-    </div>
-  </section>
-  <section class="mission">
-    <h3>Our Mission</h3>
-    <p>
-      At Nimbus, we're on a mission to transform how people manage their time and tasks. We believe that with the right tools and insights, everyone can achieve better work-life balance and accomplish their goals more effectively.
-    </p>
-    <p>
-      Our platform combines intelligent time tracking, intuitive task management, and powerful analytics to give you complete visibility into your productivity patterns. Whether you're a freelancer, team lead, or executive, Nimbus adapts to your workflow.
-    </p>
-  </section>
-  <section className="productivity-tips">
-  <h2>Productivity Tips</h2>
-  <p className="subtitle">
-    Expert strategies to help you get the most out of your time and achieve your goals
-  </p>
+      </section>
+      <section class="key-features-section">
+    <h2><h2 class="section-title">Key Features</h2></h2>
+    <div class="features-grid">
+ 
+      <div class="feature-card">
+        <div class="feature-icon blue">✔️</div>
+        <h3 class="feature-title">Smart Task Management</h3>
+        <p class="feature-desc">
+          Create, organize, and prioritize tasks with ease. Add due dates, tags, and descriptions.
+        </p>
+        <ul class="feature-list">
+          <li>Task prioritization with visual indicators</li>
+          <li>Custom tags for flexible organization</li>
+          <li>Due date tracking and reminders</li>
+        </ul>
+      </div>
 
-  <div className="tips-grid">
+  
+      <div class="feature-card">
+        <div class="feature-icon green">⏰</div>
+        <h3 class="feature-title">Effective Time Tracking</h3>
+        <p class="feature-desc">
+          Track time spent on tasks with a click. Use the built-in Pomodoro timer.
+        </p>
+        <ul class="feature-list">
+          <li>One-click time tracking for any task</li>
+          <li>Detailed time logs and history</li>
+          <li>Pomodoro timer for focus</li>
+        </ul>
+      </div>
 
-    <div className="tip-card">
-      <h3>💡 Time Blocking</h3>
-      <p>Allocate specific time blocks for different types of work to maintain focus and reduce task switching.</p>
-      <div className="tip-pro">
-        <strong>📌 Pro Tip:</strong> Schedule your most important work during your peak energy hours.
+  
+      <div class="feature-card">
+        <div class="feature-icon purple">📊</div>
+        <h3 class="feature-title">Insightful Analytics</h3>
+        <p class="feature-desc">
+          Visualize productivity patterns. Spot trends and celebrate progress.
+        </p>
+        <ul class="feature-list">
+          <li>Visual time distribution</li>
+          <li>Productivity trends over time</li>
+          <li>Completion rate analysis</li>
+        </ul>
+      </div>
+
+ 
+      <div class="feature-card">
+        <div class="feature-icon orange">🧠</div>
+        <h3 class="feature-title">Smart Notes</h3>
+        <p class="feature-desc">
+          Capture ideas and info. Organize with tags and full-text search.
+        </p>
+        <ul class="feature-list">
+          <li>Rich text editing</li>
+          <li>Tag-based organization</li>
+          <li>Powerful note search</li>
+        </ul>
       </div>
     </div>
+  </section>
+  <section class="productivity-section">
+    <div class="container">
+      <div className="title"><h2>Productivity Tips</h2></div>
 
-    <div className="tip-card">
-      <h3>⏱️ The 2-Minute Rule</h3>
-      <p>If a task takes less than 2 minutes to complete, do it immediately rather than adding it to your to-do list.</p>
-      <div className="tip-pro">
-        <strong>📌 Pro Tip:</strong> This prevents small tasks from accumulating and becoming overwhelming.
+      <div class="tips-container">
+
+        <div class="tip-card">
+          <h3>The Pomodoro Technique</h3>
+          <p>The Pomodoro Technique is a time management method that uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. Here's how to use it effectively:</p>
+          <ol>
+            <li>Choose a task to work on</li>
+            <li>Set the Pomodoro timer for 25 minutes</li>
+            <li>Work on the task until the timer rings</li>
+            <li>Take a short break (5 minutes)</li>
+            <li>After four pomodoros, take a longer break (15–30 minutes)</li>
+          </ol>
+        </div>
+
+ 
+        <div class="tip-card">
+          <h3>Task Prioritization</h3>
+          <p>Not all tasks are created equal. Use these strategies to prioritize effectively:</p>
+          <ul>
+            <li>Use the Eisenhower Matrix to categorize tasks</li>
+            <li>Start your day with the most important task (eat the frog)</li>
+            <li>Limit your daily to-do list to 3–5 tasks</li>
+            <li>Re-evaluate your priorities regularly</li>
+          </ul>
+        </div>
+
+  
+        <div class="tip-card">
+          <h3>Time Blocking</h3>
+          <p>Time blocking involves dedicating specific time periods to certain tasks or types of work:</p>
+          <ul>
+            <li>Plan your day or week in advance</li>
+            <li>Group similar tasks together</li>
+            <li>Include buffer time for unexpected issues</li>
+            <li>Be realistic about time estimates</li>
+            <li>Schedule breaks and downtime deliberately</li>
+          </ul>
+        </div>
+        
       </div>
-    </div>
-    <div className="tip-card">
-      <h3>📘 Single-Tasking</h3>
-      <p>Focus on one task at a time rather than multitasking, which can reduce productivity by up to 40%.</p>
-    </div>
 
-    <div className="tip-card">
-      <h3>🪞 Review & Reflect</h3>
-      <p>Regularly review your productivity patterns and adjust your approach based on what works best.</p>
+      
     </div>
-
+  </section>
+  
+<div className="blue">
+  <div class="join-section">
+    <h3 class="join-title">Join Us on This Journey</h3>
+    <p class="join-description">
+      We're just getting started and have big plans for the future of Nimbus. We'd love to hear your
+      feedback, suggestions, and stories about how Nimbus helps you be more productive.
+    </p>
+    <a href="/tasks" class="join-button">Start Using Nimbus</a>
   </div>
-</section>
-        </div>
+  <div className="blue">.</div>
+  </div> 
+
+  
+    
+    </body>
+    </html>
+    
   );
 }
 

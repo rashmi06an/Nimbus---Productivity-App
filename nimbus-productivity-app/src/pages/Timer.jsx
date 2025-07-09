@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Play, Pause, RotateCcw, CheckCircle, Clock } from 'lucide-react';
 import { storage } from '../utils/storage';
 import { formatTimeDetailed } from '../utils/time';
 
