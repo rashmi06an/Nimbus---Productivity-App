@@ -1,0 +1,149 @@
+.notes-page {
+    background-color: rgb(20, 20, 52);
+    color: #fff;
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: sans-serif;
+  }
+  
+  .notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .notes-header h2 {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .notes-controls {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .notes-controls input {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+    width: 200px;
+  }
+  
+  .notes-controls button {
+    background-color: white;
+    color: rgb(20, 20, 52);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .notes-main {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .notes-sidebar {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 300px;
+    height: fit-content;
+    color: rgb(20, 20, 52);
+  }
+  
+  .filter-box h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tags button {
+    background: #eee;
+    color: #333;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .tags button.active {
+    background-color: rgb(20, 20, 52);
+    color: white;
+  }
+  
+  .note-list .note-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .note-list .note-card span {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .notes-content {
+    background-color: white;
+    color: rgb(20, 20, 52);
+    border-radius: 10px;
+    padding: 1rem;
+    flex: 1;
+    min-height: 300px;
+  }
+  
+  .empty-state {
+    text-align: center;
+  }
+  
+  .empty-state p {
+    margin-bottom: 1rem;
+  }
+  
+  .empty-state button {
+    background-color: rgb(20, 20, 52);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .note-form input,
+  .note-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .note-form button {
+    background-color: rgb(20, 20, 52);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .note-detail h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .note-tag {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #555;
+  }
+  
