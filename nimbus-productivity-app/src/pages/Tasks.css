@@ -1,0 +1,95 @@
+.filters-box {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .priority-filter-button {
+    border: none;
+    background: transparent;
+    padding: 6px 12px;
+    margin-right: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgb(20, 20, 52);
+    font-weight: 500;
+  }
+  
+  .priority-filter-button.active {
+    background-color: rgb(20, 20, 52);
+    color: white;
+  }
+  
+  .priority-chip {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    font-weight: 500;
+  }
+  
+  .priority-chip.low {
+    background: #d3f9d8;
+    color: green;
+  }
+  
+  .priority-chip.medium {
+    background: #fff3cd;
+    color: orange;
+  }
+  
+  .priority-chip.high {
+    background: #f8d7da;
+    color: red;
+  }
+  
+  .priority-chip.selected {
+    border: 2px solid rgb(20, 20, 52);
+  }
+  
+  .tag-chip {
+    background: #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 10px;
+    margin: 2px 6px 2px 0;
+    font-size: 0.8rem;
+  }
+  
+  .tag-chip.selected {
+    background-color: rgb(20, 20, 52);
+    color: white;
+  }
+  
+  .task-footer {
+    display: flex;
+    gap: 1rem;
+    color: gray;
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+  
+  .modal-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .modal label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+  
+  .priority-select-group,
+  .tag-select-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
