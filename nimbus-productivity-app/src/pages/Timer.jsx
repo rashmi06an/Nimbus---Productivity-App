@@ -3,13 +3,12 @@ import './timer.css';
 
 function TimerPage() {
   const [isRunning, setIsRunning] = useState(false);
-  const [duration, setDuration] = useState(25); // in minutes
+  const [duration, setDuration] = useState(25);
   const [timeLeft, setTimeLeft] = useState(duration * 60);
   const [customInput, setCustomInput] = useState(duration);
 
   const intervalRef = useRef(null);
-
-  const beep = useRef(new Audio("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"));
+  const beep = useRef(new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg"));
 
   useEffect(() => {
     if (isRunning) {
@@ -18,7 +17,7 @@ function TimerPage() {
           if (prev === 1) {
             clearInterval(intervalRef.current);
             setIsRunning(false);
-            beep.current.play(); // 🔊 Beep sound
+            beep.current.play();
           }
           return prev - 1;
         });
@@ -30,7 +29,6 @@ function TimerPage() {
     return () => clearInterval(intervalRef.current);
   }, [isRunning]);
 
-  // Handle custom duration input
   const handleDurationChange = () => {
     if (customInput > 0) {
       setDuration(customInput);
@@ -59,6 +57,7 @@ function TimerPage() {
   };
 
   return (
+    
     <div className="timer">
       <div className="pomodoro-container">
         <h1 className="time-tracker-title">Time Tracker</h1>
@@ -92,6 +91,27 @@ function TimerPage() {
             <button className="timer-button" onClick={handleReset}>
               Reset
             </button>
+          </div>
+        </div>
+
+        {/* Additional Boxes Below Timer */}
+        <div className="bottom-boxes">
+          <div className="info-box">
+            <h3>Quick Tips</h3>
+            <ul>
+              <li>Use the Pomodoro timer for focused work sessions</li>
+              <li>Track time for accurate productivity insights</li>
+              <li>Review your time data in the Reports section</li>
+            </ul>
+          </div>
+
+          <div className="info-box">
+            <h3>Focus Checklist</h3>
+            <ul>
+              <li>Remove distractions</li>
+              <li>Set your task goal</li>
+              <li>Start the timer with intention</li>
+            </ul>
           </div>
         </div>
       </div>
