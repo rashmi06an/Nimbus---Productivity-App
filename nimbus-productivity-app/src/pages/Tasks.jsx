@@ -1,23 +1,23 @@
 import React, { useState } from "react";
+const [selectedTag, setSelectedTag] = useState("");
+
 import "./Page.css";
 
 function Tasks() {
   const [tasks, setTasks] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
-  const [filterPriority, setFilterPriority] = useState("All");
+  const [customTag, setCustomTag] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [form, setForm] = useState({
     text: "",
     description: "",
     priority: "Medium",
-    category: "",
     dueDate: "",
+    status: "Pending",
     tags: [],
   });
-
-  const priorities = ["Low", "Medium", "High"];
-  const tagOptions = ["Work", "Personal", "Health"];
 
   const openModal = () => {
     setEditingIndex(null);
@@ -25,41 +25,57 @@ function Tasks() {
       text: "",
       description: "",
       priority: "Medium",
-      category: "",
       dueDate: "",
+      status: "Pending",
       tags: [],
     });
+    setCustomTag("");
     setShowModal(true);
   };
 
-  const closeModal = () => setShowModal(false);
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const toggleTag = (tag) => {
+  const handleTagChange = () => {
+    if (customTag.trim()) {
+      setForm((prev) => ({
+        ...prev,
+        tags: [...prev.tags, customTag.trim()],
+      }));
+      setCustomTag("");
+    }
+  };
+
+  const removeTag = (tagToRemove) => {
     setForm((prev) => ({
       ...prev,
-      tags: prev.tags.includes(tag)
-        ? prev.tags.filter((t) => t !== tag)
-        : [...prev.tags, tag],
+      tags: prev.tags.filter((tag) => tag !== tagToRemove),
     }));
   };
 
   const saveTask = () => {
     if (form.text.trim()) {
-      const newTask = { ...form, done: false, timeSpent: 0 };
       if (editingIndex !== null) {
         const updated = [...tasks];
-        updated[editingIndex] = newTask;
+        updated[editingIndex] = { ...updated[editingIndex], ...form };
         setTasks(updated);
       } else {
-        setTasks([...tasks, newTask]);
+        setTasks([...tasks, { ...form, done: false }]);
       }
       closeModal();
     }
+  };
+
+  const toggleDone = (index) => {
+    const updated = [...tasks];
+    updated[index].done = !updated[index].done;
+    setTasks(updated);
   };
 
   const deleteTask = (index) => {
@@ -74,157 +90,171 @@ function Tasks() {
     setShowModal(true);
   };
 
-  const filteredTasks =
-    filterPriority === "All"
-      ? tasks
-      : tasks.filter((task) => task.priority === filterPriority);
-
   return (
     <div className="page tasks">
-      <h1>Tasks</h1>
-
-      {/* Filters */}
-      <div className="filters-box">
+      {/* Header Row */}
+      <div className="top-row">
         <div>
-          <h4>Filters</h4>
-          <div className="priority-filters">
-            {["All", "Low", "Medium", "High"].map((level) => (
-              <button
-                key={level}
-                className={`priority-filter-button ${
-                  filterPriority === level ? "active" : ""
-                }`}
-                onClick={() => setFilterPriority(level)}
-              >
-                {level}
-              </button>
-            ))}
-          </div>
+          <h1 className="namemanager">Task Manager</h1>
+          <p className="page-subtitle">
+            Helps you manage tasks efficiently and track time spent on each activity to boost your productivity.
+          </p>
         </div>
-        <div>
-          <h4>Tags</h4>
-          <div className="tag-filter-list">
-            {tagOptions.map((tag) => (
-              <span key={tag} className="tag-chip">
-                {tag}
-              </span>
-            ))}
+        <div className="button-search-group">
+          <button className="primary_button" onClick={openModal}> + Add Task</button>
+          <div className="search-container">
+            <span className="search-icon">🔍</span>
+            <input
+              type="text"
+              placeholder="Search tasks..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
       </div>
 
-      <button className="primary_button" onClick={openModal}>
-        Add Task
-      </button>
+      {/* Task List or Empty State */}
+      {tasks.length === 0 ? (
+        <div className="no-tasks-box">
+          <p className="no-tasks-text">You don't have any tasks yet.</p>
+          <button className="primary_button" onClick={openModal}>
+            + Create Your First Task
+          </button>
+        </div>
+      ) : (
+        <ul className="task-list">
+          {tasks
+            .filter((task) =>
+              task.text.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .map((task, index) => (
+              <li key={index} className={`task-item ${task.done ? "completed" : ""}`}>
 
-      <ul className="task-list">
-        {filteredTasks.map((task, index) => (
-          <li key={index} className="task-item">
-            <div className="task-details">
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <span className="task-text">
-                  <strong>{task.text}</strong>
-                </span>
-                <div>
+                <input
+                  type="checkbox"
+                  checked={task.done}
+                  onChange={() => toggleDone(index)}
+                />
+                <div className="task-details">
+                  <span
+                    className="task-text"
+                    style={{
+                      textDecoration: task.done ? "line-through" : "none",
+                      color: task.done ? "gray" : "inherit",
+                    }}
+                  >
+                    <strong>{task.text}</strong>
+                  </span>
+                  <p className="task-description">{task.description}</p>
+                  <div className="task-meta">
+                    <span className="task-category">
+                      Due: {task.dueDate || "N/A"}
+                    </span>
+                    <span
+  className={`task-priority ${
+    task.priority.toLowerCase() === "high"
+      ? "high"
+      : task.priority.toLowerCase() === "medium"
+      ? "medium"
+      : "low"
+  }`}
+>
+  {task.priority}
+</span>
+
+                    <span className="task-category">Status: {task.status}</span>
+                    <span className="task-category">
+                      Tags: {task.tags?.join(", ")}
+                    </span>
+                  </div>
+                </div>
+                <div className="task-actions">
                   <button onClick={() => editTask(index)} className="edit-button">
-                    ✏️
+                    Edit
                   </button>
                   <button onClick={() => deleteTask(index)} className="delete-button">
-                    🗑️
+                    Delete
                   </button>
                 </div>
-              </div>
-              <p className="task-description">{task.description}</p>
-              <div className="task-meta">
-                <span className={`priority-chip ${task.priority.toLowerCase()}`}>
-                  {task.priority}
-                </span>
-                {task.tags.map((tag, i) => (
-                  <span key={i} className="tag-chip">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="task-footer">
-                <span>🕒 00:00:00</span>
-                {task.dueDate && <span>📅 {task.dueDate}</span>}
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+              </li>
+            ))}
+        </ul>
+      )}
 
       {/* Modal */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal">
             <h2>{editingIndex !== null ? "Edit Task" : "Create New Task"}</h2>
+
             <input
               name="text"
-              placeholder="Task title"
+              placeholder="Task Title"
               value={form.text}
               onChange={handleFormChange}
             />
             <textarea
               name="description"
               placeholder="Add details about this task"
+              rows="3"
               value={form.description}
               onChange={handleFormChange}
             />
+
             <div className="modal-row">
-              <div>
+              <div className="modal-section">
                 <label>Priority</label>
-                <div className="priority-select-group">
-                  {priorities.map((level) => (
-                    <button
-                      key={level}
-                      className={`priority-chip ${level.toLowerCase()} ${
-                        form.priority === level ? "selected" : ""
-                      }`}
-                      onClick={() =>
-                        setForm((prev) => ({ ...prev, priority: level }))
-                      }
-                      type="button"
-                    >
-                      {level}
-                    </button>
-                  ))}
-                </div>
+                <select name="priority" value={form.priority} onChange={handleFormChange}>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
               </div>
-              <div>
+
+              <div className="modal-section">
                 <label>Due Date</label>
                 <input
-                  type="date"
                   name="dueDate"
+                  type="date"
                   value={form.dueDate}
                   onChange={handleFormChange}
                 />
               </div>
             </div>
-            <div>
-              <label>Tags</label>
-              <div className="tag-select-group">
-                {tagOptions.map((tag) => (
-                  <button
-                    key={tag}
-                    className={`tag-chip ${
-                      form.tags.includes(tag) ? "selected" : ""
-                    }`}
-                    onClick={() => toggleTag(tag)}
-                    type="button"
-                  >
-                    {tag}
-                  </button>
-                ))}
+
+            <div className="modal-row">
+              <div className="modal-section">
+                <label>Status</label>
+                <select name="status" value={form.status} onChange={handleFormChange}>
+                  <option value="Pending">Pending</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Done">Done</option>
+                </select>
               </div>
             </div>
+
+            <label>Tags</label>
+            <div className="tag-row">
+              <input
+                type="text"
+                placeholder="Add a tag"
+                value={customTag}
+                onChange={(e) => setCustomTag(e.target.value)}
+              />
+              <button onClick={handleTagChange}>Add</button>
+            </div>
+            <div className="tag-list">
+              {form.tags.map((tag, i) => (
+                <span key={i} className="tag" onClick={() => removeTag(tag)}>{tag} ×</span>
+              ))}
+            </div>
+
             <div className="modal-actions">
               <button className="primary_button" onClick={saveTask}>
-                {editingIndex !== null ? "Update Task" : "Create Task"}
+                {editingIndex !== null ? "Update" : "Create"}
               </button>
-              <button className="secondary_button" onClick={closeModal}>
-                Cancel
-              </button>
+              <button className="secondary_button" onClick={closeModal}>Cancel</button>
             </div>
           </div>
         </div>
