@@ -1,7 +1,7 @@
 
 
  .primary-btn {
-  background-color: #1e3a8a;
+  background-color: #0d1a3f;
   color: white;
   padding: 10px 16px;
   border: none;
@@ -967,7 +967,7 @@
   border-color: green;
 }
 .page.tasks {
-  background-color: rgb(20, 20, 78);
+  background-color: rgb(15, 15, 61);
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -993,5 +993,60 @@
 
 .tag-row button:hover {
   background-color: #3b60d1; /* Light blue on hover */
+}
+/* === Date Picker (Calendar) === */
+.date-picker {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-shadow: 0 0 0 2px transparent;
+  cursor: pointer;
+}
+
+.date-picker:hover {
+  border-color: #60a5fa; /* Light blue on hover */
+}
+
+.date-picker:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3); /* subtle blue focus ring */
+}
+
+/* === Filter Tags Dropdown === */
+.filter-tags select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.filter-tags select:hover {
+  border-color: #60a5fa;
+  background-color: #fff;
+}
+
+.filter-tags select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+.filter-tags {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.task-item.completed {
+  border-left: 4px solid #10b981; /* Green */
+  border-right: 4px solid #10b981;
+  background-color: #f0fdf4; /* subtle green background */
 }
 
