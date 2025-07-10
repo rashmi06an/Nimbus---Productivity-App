@@ -443,3 +443,30 @@
 .timer-button{
   text-align: center;
 }
+.custom-time-input {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.custom-time-input input {
+  padding: 6px 10px;
+  width: 100px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.custom-time-input button {
+  background-color: #151146;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.custom-time-input button:hover {
+  background-color: #274aa9;
+}
+
