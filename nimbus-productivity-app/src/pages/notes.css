@@ -1,149 +1,224 @@
+/* General Page Styling */
 .notes-page {
-    background-color: rgb(20, 20, 52);
-    color: #fff;
-    min-height: 100vh;
-    padding: 1rem;
-    font-family: sans-serif;
-  }
-  
-  .notes-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .notes-header h2 {
-    font-size: 2rem;
-    color: white;
-  }
-  
-  .notes-controls {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .notes-controls input {
-    padding: 0.5rem;
-    border-radius: 6px;
-    border: none;
-    width: 200px;
-  }
-  
-  .notes-controls button {
-    background-color: white;
-    color: rgb(20, 20, 52);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .notes-main {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .notes-sidebar {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    width: 300px;
-    height: fit-content;
-    color: rgb(20, 20, 52);
-  }
-  
-  .filter-box h4 {
-    margin-bottom: 0.5rem;
-  }
-  
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .tags button {
-    background: #eee;
-    color: #333;
-    padding: 4px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .tags button.active {
-    background-color: rgb(20, 20, 52);
-    color: white;
-  }
-  
-  .note-list .note-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-  }
-  
-  .note-list .note-card span {
-    font-size: 0.8rem;
-    color: #666;
-  }
-  
-  .notes-content {
-    background-color: white;
-    color: rgb(20, 20, 52);
-    border-radius: 10px;
-    padding: 1rem;
-    flex: 1;
-    min-height: 300px;
-  }
-  
-  .empty-state {
-    text-align: center;
-  }
-  
-  .empty-state p {
-    margin-bottom: 1rem;
-  }
-  
-  .empty-state button {
-    background-color: rgb(20, 20, 52);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .note-form input,
-  .note-form textarea {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  .note-form button {
-    background-color: rgb(20, 20, 52);
-    color: white;
-    padding: 0.6rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .note-detail h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .note-tag {
-    margin-top: 1rem;
-    font-style: italic;
-    color: #555;
-  }
-  
+  font-family: sans-serif;
+  padding: 24px;
+  background-color: #0d113d;
+  color: #f6f6f6;
+  height:700px;
+}
+
+/* Header Row */
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.notes-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fcfdff;
+}
+
+.notes-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.notes-controls input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.notes-controls button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.notes-controls button:hover {
+  background-color: #274aa9;
+}
+
+/* Main Layout */
+.notes-body {
+  display: flex;
+  gap: 24px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+}
+
+/* Tags Filter Box */
+.tags-section {
+  background-color: #dee5f9;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #19175a;
+  margin-bottom: 10px;
+}
+
+.tag-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-buttons button {
+  padding: 6px 12px;
+  background-color: white;
+  border: 1px solid #1e3a8a;
+  color: #0a1a44;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.tag-buttons button.active,
+.tag-buttons button:hover {
+  background-color: #c4cbe7;
+}
+
+.clear {
+  background-color: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+/* Notes List */
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-item {
+  background-color: white;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.note-item.selected {
+  border: 2px solid #1e3a8a;
+  background-color: #f0f4ff;
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.note-tag {
+  font-size: 12px;
+  color: #475569;
+}
+
+.note-date {
+  font-size: 10px;
+  text-align: right;
+  color: #64748b;
+}
+
+/* Right Panel */
+.note-content {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  color: #475569;
+}
+
+.empty-state button {
+  margin-top: 12px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.empty-state button:hover {
+  background-color: #274aa9;
+}
+
+/* Form Styling */
+.note-form input,
+.note-form textarea,
+.note-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.note-form button {
+  margin-right: 10px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.note-form button:hover {
+  background-color: #274aa9;
+}
+
+/* Note Detail */
+.note-detail h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.note-detail p {
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+.note-detail .note-tag {
+  font-size: 13px;
+  color: #475569;
+}
+
+.note-date-view {
+  text-align: right;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 10px;
+}
+
