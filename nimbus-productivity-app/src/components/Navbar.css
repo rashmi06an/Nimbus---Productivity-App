@@ -4,7 +4,7 @@
     top: 0;
     width: 100%;
     background-color:rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.1);
+    color: rgba(16, 23, 69, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,6 +16,7 @@
   .navbar .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: rgb(21, 21, 72);
   }
   
   .nav-links {
@@ -25,6 +26,8 @@
     gap: 20px;
     padding-left: 0;
     margin: 0;
+    color: rgb(16, 16, 58);
+    font-style: bold;
   }
   
   .nav-links li a {

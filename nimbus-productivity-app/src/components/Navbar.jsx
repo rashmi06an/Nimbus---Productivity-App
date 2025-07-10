@@ -7,11 +7,11 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="logo">Nimbus</div>
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/tasks">Tasks</Link></li>
-        <li><Link to="/timer">Timer</Link></li>
-        <li><Link to="/notes">Notes</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li><Link to="/"><h4>Home</h4></Link></li>
+        <li><Link to="/tasks"><h4>Tasks</h4></Link></li>
+        <li><Link to="/timer"><h4>Timer</h4></Link></li>
+        <li><Link to="/notes"><h4>Notes</h4></Link></li>
+        <li><Link to="/about"><h4>About</h4></Link></li>
 
         
       </ul>
