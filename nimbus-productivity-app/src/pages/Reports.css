@@ -1,0 +1,64 @@
+.reports-container {
+    padding: 100px 60px 40px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .reports-heading {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .chart-placeholder {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .chart-placeholder h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #334155;
+    text-align: center;
+  }
+  
+  .bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 200px;
+    gap: 18px;
+    padding-bottom: 10px;
+  }
+  
+  .bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .bar {
+    width: 20px;
+    border-radius: 4px;
+    transition: height 0.3s ease;
+  }
+  
+  .tasks-bar {
+    background-color: #60a5fa;
+  }
+  
+  .hours-bar {
+    background-color: #38bdf8;
+  }
+  
+  .bar-label {
+    font-size: 0.9rem;
+    color: #64748b;
+  }

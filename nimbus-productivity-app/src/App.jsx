@@ -6,6 +6,8 @@ import Tasks from "./pages/Tasks";
 import Notes from "./pages/Notes";
 import About from "./pages/About";
 import Timer from "./pages/Timer";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
 import "./App.css";
 
 function App() {
@@ -19,7 +21,8 @@ function App() {
           <Route path="/notes" element={<Notes />} />
           <Route path="/about" element={<About />} />
           <Route path="/Timer" element={<Timer />} />
-          
+          <Route path="/Reports" element={<Reports />} />
+          <Route path="/Settings" element={<Settings />} />
         </Routes>
       </div>
     </Router>
