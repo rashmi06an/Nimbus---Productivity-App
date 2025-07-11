@@ -1,3 +1,4 @@
+/* Container */
 .reports-container {
     padding: 100px 60px 40px;
     background-color: #f9fafb;
@@ -5,6 +6,7 @@
     box-sizing: border-box;
   }
   
+  /* Heading */
   .reports-heading {
     font-size: 2rem;
     color: #1e293b;
@@ -12,23 +14,55 @@
     text-align: center;
   }
   
-  .chart-placeholder {
+  /* Summary Section */
+  .summary-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  
+  .summary-card {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 200px;
+  }
+  
+  .summary-card h3 {
+    font-size: 1.1rem;
+    color: #334155;
+    margin-bottom: 8px;
+  }
+  
+  .summary-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1e3a8a;
+  }
+  
+  /* Chart Section */
+  .chart-section {
     background-color: white;
     padding: 30px 20px;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    max-width: 800px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    max-width: 900px;
     margin: 0 auto;
   }
   
-  .chart-placeholder h2 {
+  .chart-section h2 {
     font-size: 1.3rem;
-    margin-bottom: 20px;
-    color: #334155;
+    margin-bottom: 25px;
+    color: #1e293b;
     text-align: center;
   }
   
-  .bar-chart {
+  /* Bar Chart */
+  .chart-bars {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -51,14 +85,57 @@
   }
   
   .tasks-bar {
-    background-color: #60a5fa;
+    background-color: #3b82f6;
   }
   
   .hours-bar {
     background-color: #38bdf8;
+    margin-top: 4px;
   }
   
   .bar-label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #64748b;
+  }
+  
+  /* Legend */
+  .bar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #475569;
+  }
+  
+  .legend {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    margin-right: 8px;
+  }
+  
+  .legend.tasks {
+    background-color: #3b82f6;
+  }
+  
+  .legend.hours {
+    background-color: #38bdf8;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .summary-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .chart-bars {
+      gap: 12px;
+    }
+  
+    .bar {
+      width: 14px;
+    }
   }
