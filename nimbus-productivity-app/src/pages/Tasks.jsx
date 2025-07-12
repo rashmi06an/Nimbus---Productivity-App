@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Page.css";
+import { storage } from "../utils/storage";
 
 function Tasks() {
   const [tasksByDate, setTasksByDate] = useState({});
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]);
+  const [selectedDate, setSelectedDate] = useState(() => {
+    return (
+      localStorage.getItem("selectedDate") ||
+      new Date().toISOString().split("T")[0]
+    );
+  });
   const [showModal, setShowModal] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
   const [customTag, setCustomTag] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [filterTag, setFilterTag] = useState("");
+  const [showCompleted, setShowCompleted] = useState(false);
 
   const [form, setForm] = useState({
     text: "",
@@ -19,14 +26,32 @@ function Tasks() {
     tags: [],
   });
 
-  const getTasksForDate = () => tasksByDate[selectedDate] || [];
+  // Load tasks from localStorage
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("nimbus_tasks");
+      if (stored) setTasksByDate(JSON.parse(stored));
+    } catch (error) {
+      console.error("Failed to load tasks", error);
+    }
+  }, []);
 
+  // Save tasks to storage and localStorage
   const updateTasksForDate = (newTasks) => {
-    setTasksByDate((prev) => ({
-      ...prev,
+    const updated = {
+      ...tasksByDate,
       [selectedDate]: newTasks,
-    }));
+    };
+    setTasksByDate(updated);
+    storage.saveTasks(updated);
   };
+
+  // Save selectedDate
+  useEffect(() => {
+    localStorage.setItem("selectedDate", selectedDate);
+  }, [selectedDate]);
+
+  const getTasksForDate = () => tasksByDate[selectedDate] || [];
 
   const openModal = () => {
     setEditingIndex(null);
@@ -82,8 +107,30 @@ function Tasks() {
 
   const toggleDone = (index) => {
     const updated = [...getTasksForDate()];
-    updated[index].done = !updated[index].done;
+    const task = updated[index];
+    const now = new Date().toISOString();
+
+    const wasAlreadyDone = task.done;
+    const newDoneState = !wasAlreadyDone;
+
+    updated[index] = {
+      ...task,
+      done: newDoneState,
+      completedAt: newDoneState ? now : null,
+    };
+
     updateTasksForDate(updated);
+
+    if (newDoneState && !wasAlreadyDone) {
+      const newSession = {
+        taskId: task.text + now,
+        duration: 25,
+        endTime: now,
+      };
+
+      const existing = storage.getPomodoroSessions();
+      storage.savePomodoroSessions([...existing, newSession]);
+    }
   };
 
   const deleteTask = (index) => {
@@ -98,9 +145,11 @@ function Tasks() {
     setShowModal(true);
   };
 
-  const filteredTasks = getTasksForDate().filter((task) =>
-    task.text.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (filterTag === "" || task.tags.includes(filterTag))
+  const filteredTasks = getTasksForDate().filter(
+    (task) =>
+      (showCompleted || !task.done) &&
+      task.text.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      (filterTag === "" || task.tags.includes(filterTag))
   );
 
   return (
@@ -120,7 +169,9 @@ function Tasks() {
             onChange={(e) => setSelectedDate(e.target.value)}
             className="date-picker"
           />
-          <button className="primary_button" onClick={openModal}>+ Add Task</button>
+          <button className="primary_button" onClick={openModal}>
+            + Add Task
+          </button>
           <div className="search-container">
             <span className="search-icon">🔍</span>
             <input
@@ -133,63 +184,90 @@ function Tasks() {
         </div>
       </div>
 
-      {/* Filter Tags */}
+      {/* Filter + Toggle */}
       <div className="filter-tags">
-        <select onChange={(e) => setFilterTag(e.target.value)} value={filterTag}>
+        <select
+          onChange={(e) => setFilterTag(e.target.value)}
+          value={filterTag}
+        >
           <option value="">All Tags</option>
-          {[...new Set(getTasksForDate().flatMap((task) => task.tags))].map((tag, i) => (
-            <option key={i} value={tag}>{tag}</option>
-          ))}
+          {[...new Set(getTasksForDate().flatMap((task) => task.tags))].map(
+            (tag, i) => (
+              <option key={i} value={tag}>
+                {tag}
+              </option>
+            )
+          )}
         </select>
+        <button
+          className="toggle-completed-btn"
+          onClick={() => setShowCompleted((prev) => !prev)}
+        >
+          {showCompleted ? "Hide Completed" : "Show Completed"}
+        </button>
       </div>
 
+      {/* Task List */}
       {filteredTasks.length === 0 ? (
-  <div className="no-tasks-box">
-    <p className="no-tasks-text">
-      {getTasksForDate().length === 0 ? (
-        new Date(selectedDate) < new Date(new Date().toDateString()) ? (
-          "Oops! No tasks found. That might've been a lazy day 😴 — let's do better today!"
-        ) : (
-          "You don't have any tasks yet."
-        )
+        <div className="no-tasks-box">
+          <p className="no-tasks-text">
+            {getTasksForDate().length === 0
+              ? new Date(selectedDate) < new Date(new Date().toDateString())
+                ? "Oops! No tasks found. That might've been a lazy day 😴 — let's do better today!"
+                : "You don't have any tasks yet."
+              : "No tasks match your search or filter."}
+          </p>
+          {new Date(selectedDate) >= new Date(new Date().toDateString()) && (
+            <button className="primary_button" onClick={openModal}>
+              + Create Your Task
+            </button>
+          )}
+        </div>
       ) : (
-        "No tasks match your search or filter."
-      )}
-    </p>
-    {new Date(selectedDate) >= new Date(new Date().toDateString()) && (
-      <button className="primary_button" onClick={openModal}>
-        + Create Your Task
-      </button>
-    )}
-  </div>
-) : (
-  <ul className="task-list">
-
+        <ul className="task-list">
           {filteredTasks.map((task, index) => (
-            <li key={index} className={`task-item ${task.done ? 'done' : ''}`}>
+            <li key={index} className={`task-item ${task.done ? "done" : ""}`}>
               <input
                 type="checkbox"
                 checked={task.done}
                 onChange={() => toggleDone(index)}
               />
               <div className="task-details">
-                <span className="task-text" style={{
-                  textDecoration: task.done ? "line-through" : "none",
-                  color: task.done ? "gray" : "inherit"
-                }}>
+                <span
+                  className="task-text"
+                  style={{
+                    textDecoration: task.done ? "line-through" : "none",
+                    color: task.done ? "gray" : "inherit",
+                  }}
+                >
                   <strong>{task.text}</strong>
                 </span>
                 <p className="task-description">{task.description}</p>
                 <div className="task-meta">
-                  <span className="task-category">Due: {task.dueDate || "N/A"}</span>
-                  <span className={`task-priority-box ${task.priority.toLowerCase()}`}>{task.priority}</span>
+                  <span className="task-category">
+                    Due: {task.dueDate || "N/A"}
+                  </span>
+                  <span
+                    className={`task-priority-box ${task.priority.toLowerCase()}`}
+                  >
+                    {task.priority}
+                  </span>
                   <span className="task-category">Status: {task.status}</span>
-                  <span className="task-category">Tags: {task.tags.join(", ")}</span>
+                  <span className="task-category">
+                    Tags: {task.tags.join(", ")}
+                  </span>
                 </div>
               </div>
               <div className="task-actions">
-                <button onClick={() => editTask(index)} className="edit-button">Edit</button>
-                <button onClick={() => deleteTask(index)} className="delete-button">Delete</button>
+                <button onClick={() => editTask(index)} className="edit-button">
+                  Edit
+                </button>
+                <button
+                  onClick={() => deleteTask(index)}
+                  className="delete-button"
+                >
+                  Delete
+                </button>
               </div>
             </li>
           ))}
@@ -219,7 +297,11 @@ function Tasks() {
             <div className="modal-row">
               <div className="modal-section">
                 <label>Priority</label>
-                <select name="priority" value={form.priority} onChange={handleFormChange}>
+                <select
+                  name="priority"
+                  value={form.priority}
+                  onChange={handleFormChange}
+                >
                   <option value="Low">Low</option>
                   <option value="Medium">Medium</option>
                   <option value="High">High</option>
@@ -239,7 +321,11 @@ function Tasks() {
 
             <div className="modal-section">
               <label>Status</label>
-              <select name="status" value={form.status} onChange={handleFormChange}>
+              <select
+                name="status"
+                value={form.status}
+                onChange={handleFormChange}
+              >
                 <option value="Pending">Pending</option>
                 <option value="Dispatched">In Progress</option>
                 <option value="Delivered">Done</option>
@@ -258,7 +344,9 @@ function Tasks() {
             </div>
             <div className="tag-list">
               {form.tags.map((tag, i) => (
-                <span key={i} className="tag" onClick={() => removeTag(tag)}>{tag} ×</span>
+                <span key={i} className="tag" onClick={() => removeTag(tag)}>
+                  {tag} ×
+                </span>
               ))}
             </div>
 
@@ -266,7 +354,9 @@ function Tasks() {
               <button className="primary_button" onClick={saveTask}>
                 {editingIndex !== null ? "Update" : "Create"}
               </button>
-              <button className="secondary_button" onClick={closeModal}>Cancel</button>
+              <button className="secondary_button" onClick={closeModal}>
+                Cancel
+              </button>
             </div>
           </div>
         </div>

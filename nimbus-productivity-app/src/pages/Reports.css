@@ -1,87 +1,90 @@
 /* Container */
 .reports-container {
-    padding: 100px 60px 40px;
-    background-color: #f9fafb;
+    padding: 2rem;
+    background-color: #f8fbff;
     min-height: 100vh;
-    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1f2937;
   }
   
   /* Heading */
   .reports-heading {
-    font-size: 2rem;
-    color: #1e293b;
-    margin-bottom: 40px;
     text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
   }
   
   /* Summary Section */
   .summary-section {
     display: flex;
-    justify-content: center;
-    gap: 30px;
     flex-wrap: wrap;
-    margin-bottom: 50px;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
   
   .summary-card {
-    background-color: white;
-    padding: 20px 30px;
+    background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 2rem;
+    min-width: 160px;
     text-align: center;
-    width: 200px;
+    transition: transform 0.2s;
+  }
+  
+  .summary-card:hover {
+    transform: translateY(-4px);
   }
   
   .summary-card h3 {
-    font-size: 1.1rem;
-    color: #334155;
-    margin-bottom: 8px;
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
   }
   
   .summary-card p {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: bold;
-    color: #1e3a8a;
+    color: #2563eb;
   }
   
   /* Chart Section */
   .chart-section {
-    background-color: white;
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    max-width: 900px;
-    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   }
   
   .chart-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 25px;
-    color: #1e293b;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     text-align: center;
+    font-weight: 600;
   }
   
-  /* Bar Chart */
+  /* Chart bars */
   .chart-bars {
     display: flex;
-    justify-content: space-around;
     align-items: flex-end;
-    height: 200px;
-    gap: 18px;
-    padding-bottom: 10px;
+    gap: 1.5rem;
+    height: 250px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
   }
   
   .bar-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
   }
   
   .bar {
     width: 20px;
-    border-radius: 4px;
-    transition: height 0.3s ease;
+    margin-bottom: 6px;
+    border-radius: 6px 6px 0 0;
   }
   
   .tasks-bar {
@@ -89,31 +92,30 @@
   }
   
   .hours-bar {
-    background-color: #38bdf8;
-    margin-top: 4px;
+    background-color: #06b6d4;
   }
   
   .bar-label {
     font-size: 0.85rem;
-    color: #64748b;
+    color: #6b7280;
   }
   
   /* Legend */
   .bar-legend {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-    font-size: 0.95rem;
-    color: #475569;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: #374151;
   }
   
   .legend {
     display: inline-block;
     width: 14px;
     height: 14px;
-    border-radius: 3px;
-    margin-right: 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
   }
   
   .legend.tasks {
@@ -121,21 +123,5 @@
   }
   
   .legend.hours {
-    background-color: #38bdf8;
-  }
-  
-  /* Responsive */
-  @media screen and (max-width: 768px) {
-    .summary-section {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .chart-bars {
-      gap: 12px;
-    }
-  
-    .bar {
-      width: 14px;
-    }
+    background-color: #06b6d4;
   }

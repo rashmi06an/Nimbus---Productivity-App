@@ -1,11 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Reports.css";
-import reportData from "../data/sampleReportData";
+import { storage } from "../utils/storage";
+import { isThisWeek } from "../utils/time";
 
 export default function Reports() {
-  // Calculate totals
-  const totalTasks = reportData.reduce((sum, day) => sum + day.tasks, 0);
-  const totalHours = reportData.reduce((sum, day) => sum + day.hours, 0);
+  const [reportData, setReportData] = useState([]);
+  const [totalTasks, setTotalTasks] = useState(0);
+  const [totalHours, setTotalHours] = useState(0);
+
+  useEffect(() => {
+    const refreshReport = () => {
+      const tasks = storage.getTasks();
+      const sessions = storage.getPomodoroSessions();
+
+      const tasksCompleted = tasks.filter(
+        (task) => task.completedAt && isThisWeek(new Date(task.completedAt))
+      );
+
+      const weeklySessions = sessions.filter(
+        (session) => session.endTime && isThisWeek(new Date(session.endTime))
+      );
+
+      const totalTasks = tasksCompleted.length;
+      const totalMinutes = weeklySessions.reduce(
+        (sum, s) => sum + (s.duration || 0),
+        0
+      );
+      const totalHours = totalMinutes / 60;
+
+      // Prepare bar chart data
+      const chartMap = {};
+
+      weeklySessions.forEach((session) => {
+        const dateKey = new Date(session.endTime).toISOString().slice(0, 10);
+        if (!chartMap[dateKey]) {
+          chartMap[dateKey] = { date: dateKey, tasks: 0, hours: 0 };
+        }
+        chartMap[dateKey].hours += session.duration / 60;
+      });
+
+      tasksCompleted.forEach((task) => {
+        const dateKey = new Date(task.completedAt).toISOString().slice(0, 10);
+        if (!chartMap[dateKey]) {
+          chartMap[dateKey] = { date: dateKey, tasks: 0, hours: 0 };
+        }
+        chartMap[dateKey].tasks += 1;
+      });
+
+      const chartData = Object.values(chartMap).sort(
+        (a, b) => new Date(a.date) - new Date(b.date)
+      );
+
+      setTotalTasks(totalTasks);
+      setTotalHours(totalHours);
+      setReportData(chartData);
+    };
+
+    // Run once on mount
+    refreshReport();
+
+    // Refresh every 2 seconds (real-time)
+    const interval = setInterval(refreshReport, 2000);
+
+    // Clean up on unmount
+    return () => clearInterval(interval);
+  }, []);
+
   const productivityScore = totalTasks * totalHours;
 
   return (
@@ -40,15 +100,19 @@ export default function Reports() {
               <div
                 className="bar hours-bar"
                 style={{ height: `${item.hours * 15}px` }}
-                title={`${item.hours} hours`}
+                title={`${item.hours.toFixed(1)} hours`}
               ></div>
               <p className="bar-label">{item.date.slice(5)}</p>
             </div>
           ))}
         </div>
         <div className="bar-legend">
-          <div><span className="legend tasks"></span> Tasks</div>
-          <div><span className="legend hours"></span> Hours</div>
+          <div>
+            <span className="legend tasks"></span> Tasks
+          </div>
+          <div>
+            <span className="legend hours"></span> Hours
+          </div>
         </div>
       </div>
     </div>
