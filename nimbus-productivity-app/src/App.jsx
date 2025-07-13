@@ -24,6 +24,7 @@ function App() {
           <Route path="/Reports" element={<Reports />} />
           <Route path="/Settings" element={<Settings />} />
         </Routes>
+     
       </div>
     </Router>
   );

@@ -1049,4 +1049,75 @@
   border-right: 4px solid #10b981;
   background-color: #f0fdf4; /* subtle green background */
 }
+/* Filter + toggle section layout */
+.filter-tags {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* space between dropdown and button */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Adjust dropdown */
+.filter-tags select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 14px;
+}
+
+/* Toggle button styles */
+.toggle-completed-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+  height:30px;
+
+}
+
+.toggle-completed-btn:hover {
+  background-color: #162e6e;
+}
+/* Priority badge with border color only */
+.task-priority-box {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+/* Color-coded borders */
+.task-priority-box.low {
+  border-color: #facc15;     /* Yellow */
+
+}
+
+.task-priority-box.medium {
+  border-color: #f97316;     /* Orange */
+
+}
+
+.task-priority-box.high {
+  border-color: #ef4444;     /* Red */
+
+}
+/* This will strike through everything inside a completed task */
+.task-item.done .task-text,
+.task-item.done .task-description,
+.task-item.done .task-meta,
+.task-item.done .task-category {
+  text-decoration: line-through;
+  
+}
+
 

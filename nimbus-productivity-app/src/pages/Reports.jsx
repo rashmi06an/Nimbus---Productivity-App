@@ -88,7 +88,7 @@ export default function Reports() {
       </div>
 
       <div className="chart-section">
-        <h2>Productivity Overview</h2>
+        <h2 className="productivity">Productivity Overview</h2>
         <div className="chart-bars">
           {reportData.map((item, index) => (
             <div className="bar-group" key={index}>
