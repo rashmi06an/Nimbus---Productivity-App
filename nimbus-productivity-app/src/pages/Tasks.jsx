@@ -16,6 +16,9 @@ function Tasks() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterTag, setFilterTag] = useState("");
   const [showCompleted, setShowCompleted] = useState(false);
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "light"
+  );
 
   const [form, setForm] = useState({
     text: "",
@@ -25,6 +28,21 @@ function Tasks() {
     status: "Pending",
     tags: [],
   });
+
+  // Theme application based on theme state
+  useEffect(() => {
+    document.body.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
+  // Listen for theme change from other tabs/components
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const newTheme = localStorage.getItem("theme") || "light";
+      setTheme(newTheme);
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
   // Load tasks from localStorage
   useEffect(() => {
@@ -36,7 +54,10 @@ function Tasks() {
     }
   }, []);
 
-  // Save tasks to storage and localStorage
+  useEffect(() => {
+    localStorage.setItem("selectedDate", selectedDate);
+  }, [selectedDate]);
+
   const updateTasksForDate = (newTasks) => {
     const updated = {
       ...tasksByDate,
@@ -45,11 +66,6 @@ function Tasks() {
     setTasksByDate(updated);
     storage.saveTasks(updated);
   };
-
-  // Save selectedDate
-  useEffect(() => {
-    localStorage.setItem("selectedDate", selectedDate);
-  }, [selectedDate]);
 
   const getTasksForDate = () => tasksByDate[selectedDate] || [];
 
@@ -153,7 +169,7 @@ function Tasks() {
   );
 
   return (
-    <div className="page tasks">
+    <div className={`page tasks ${theme === "dark" ? "dark" : ""}`}>
       {/* Header */}
       <div className="top-row">
         <div>

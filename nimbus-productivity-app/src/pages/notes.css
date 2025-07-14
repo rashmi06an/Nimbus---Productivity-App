@@ -4,7 +4,7 @@
   padding: 24px;
   background-color: #0d113d;
   color: #f6f6f6;
-  height:700px;
+  height: 700px;
 }
 
 /* Header Row */
@@ -222,3 +222,122 @@
   margin-top: 10px;
 }
 
+/* Dark Theme Overrides */
+.notes-page.dark {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Header */
+.notes-page.dark .notes-title {
+  color: #f8fafc;
+}
+
+.notes-page.dark .notes-controls input {
+  background-color: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+.notes-page.dark .notes-controls button {
+  background-color: #3b82f6;
+}
+
+.notes-page.dark .notes-controls button:hover {
+  background-color: #2563eb;
+}
+
+/* Sidebar */
+.notes-page.dark .tags-section {
+  background-color: #334155;
+}
+
+.notes-page.dark .filter-heading {
+  color: #e2e8f0;
+}
+
+.notes-page.dark .tag-buttons button {
+  background-color: transparent;
+  color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.notes-page.dark .tag-buttons button.active,
+.notes-page.dark .tag-buttons button:hover {
+  background-color: #475569;
+}
+
+/* Notes List */
+.notes-page.dark .note-item {
+  background-color: #1e293b;
+  border: 1px solid #475569;
+}
+
+.notes-page.dark .note-item.selected {
+  border: 2px solid #3b82f6;
+  background-color: #334155;
+}
+
+.notes-page.dark .note-title {
+  color: #60a5fa;
+}
+
+.notes-page.dark .note-tag {
+  color: #cbd5e1;
+}
+
+.notes-page.dark .note-date {
+  color: #94a3b8;
+}
+
+/* Right Panel */
+.notes-page.dark .note-content {
+  background-color: #334155;
+}
+
+/* Empty State */
+.notes-page.dark .empty-state {
+  color: #cbd5e1;
+}
+
+.notes-page.dark .empty-state button {
+  background-color: #3b82f6;
+}
+
+.notes-page.dark .empty-state button:hover {
+  background-color: #2563eb;
+}
+
+/* Form */
+.notes-page.dark .note-form input,
+.notes-page.dark .note-form textarea,
+.notes-page.dark .note-form select {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+
+.notes-page.dark .note-form button {
+  background-color: #3b82f6;
+}
+
+.notes-page.dark .note-form button:hover {
+  background-color: #2563eb;
+}
+
+/* Note Detail */
+.notes-page.dark .note-detail h2 {
+  color: #60a5fa;
+}
+
+.notes-page.dark .note-detail p {
+  color: #e2e8f0;
+}
+
+.notes-page.dark .note-detail .note-tag {
+  color: #cbd5e1;
+}
+
+.notes-page.dark .note-date-view {
+  color: #94a3b8;
+}

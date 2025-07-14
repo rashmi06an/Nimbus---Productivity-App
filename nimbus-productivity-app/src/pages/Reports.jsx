@@ -7,8 +7,14 @@ export default function Reports() {
   const [reportData, setReportData] = useState([]);
   const [totalTasks, setTotalTasks] = useState(0);
   const [totalHours, setTotalHours] = useState(0);
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+
     const refreshReport = () => {
       const tasks = storage.getTasks();
       const sessions = storage.getPomodoroSessions();
@@ -28,7 +34,6 @@ export default function Reports() {
       );
       const totalHours = totalMinutes / 60;
 
-      // Prepare bar chart data
       const chartMap = {};
 
       weeklySessions.forEach((session) => {
@@ -56,20 +61,15 @@ export default function Reports() {
       setReportData(chartData);
     };
 
-    // Run once on mount
     refreshReport();
-
-    // Refresh every 2 seconds (real-time)
     const interval = setInterval(refreshReport, 2000);
-
-    // Clean up on unmount
     return () => clearInterval(interval);
   }, []);
 
   const productivityScore = totalTasks * totalHours;
 
   return (
-    <div className="reports-container">
+    <div className={`reports-container ${theme}`}>
       <h1 className="reports-heading">Your Weekly Report</h1>
 
       <div className="summary-section">

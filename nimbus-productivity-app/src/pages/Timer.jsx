@@ -1,15 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './timer.css';
+import React, { useState, useEffect, useRef } from "react";
+import "./timer.css";
 
 function TimerPage() {
   const [isRunning, setIsRunning] = useState(false);
   const [duration, setDuration] = useState(25);
   const [timeLeft, setTimeLeft] = useState(duration * 60);
   const [customInput, setCustomInput] = useState(duration);
+  const [theme, setTheme] = useState("light"); // 🔥 get theme from localStorage
 
   const intervalRef = useRef(null);
-  const beep = useRef(new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg"));
+  const beep = useRef(
+    new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg")
+  );
 
+  // 👇 On component mount, get theme from localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+  }, []);
+
+  // Timer logic
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
@@ -41,15 +51,12 @@ function TimerPage() {
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60)
       .toString()
-      .padStart(2, '0');
-    const seconds = (time % 60).toString().padStart(2, '0');
+      .padStart(2, "0");
+    const seconds = (time % 60).toString().padStart(2, "0");
     return `${minutes}:${seconds}`;
   };
 
-  const handleStartPause = () => {
-    setIsRunning((prev) => !prev);
-  };
-
+  const handleStartPause = () => setIsRunning((prev) => !prev);
   const handleReset = () => {
     clearInterval(intervalRef.current);
     setIsRunning(false);
@@ -57,8 +64,7 @@ function TimerPage() {
   };
 
   return (
-    
-    <div className="timer">
+    <div className={`timer ${theme === "dark" ? "dark" : ""}`}>
       <div className="pomodoro-container">
         <h1 className="time-tracker-title">Time Tracker</h1>
 
@@ -86,7 +92,7 @@ function TimerPage() {
 
           <div className="timer-buttons">
             <button className="timer-button" onClick={handleStartPause}>
-              {isRunning ? 'Pause' : 'Start'}
+              {isRunning ? "Pause" : "Start"}
             </button>
             <button className="timer-button" onClick={handleReset}>
               Reset
@@ -94,7 +100,6 @@ function TimerPage() {
           </div>
         </div>
 
-        {/* Additional Boxes Below Timer */}
         <div className="bottom-boxes">
           <div className="info-box">
             <h3>Quick Tips</h3>

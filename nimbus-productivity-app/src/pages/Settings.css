@@ -1,85 +1,99 @@
 .settings-container {
-    padding: 100px 60px 40px;
-    min-height: 100vh;
-    background-color: #f9fafb;
-    transition: background-color 0.3s ease;
-  }
-  
-  .settings-container.dark {
-    background-color: #1e293b;
-    color: #f1f5f9;
-  }
-  
-  .settings-heading {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #1e293b;
-  }
-  
-  .settings-container.dark .settings-heading {
-    color: #f1f5f9;
-  }
-  
-  .settings-section {
-    background-color: white;
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    max-width: 600px;
-    margin-bottom: 30px;
-  }
-  
-  .settings-container.dark .settings-section {
-    background-color: #334155;
-  }
-  
-  .settings-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #0f172a;
-  }
-  
-  .settings-container.dark .settings-section h3 {
-    color: #e2e8f0;
-  }
-  
-  .settings-input {
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 1rem;
-    margin-top: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
-  
-  .settings-container.dark .settings-input {
-    background-color: #1e293b;
-    color: white;
-    border: 1px solid #475569;
-  }
-  
-  .preview {
-    font-size: 0.95rem;
-    color: #475569;
-  }
-  
-  .settings-container.dark .preview {
-    color: #cbd5e1;
-  }
-  
-  .theme-toggle-btn {
-    padding: 10px 16px;
-    font-size: 1rem;
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  .theme-toggle-btn:hover {
-    background-color: #2563eb;
-  }
+  padding: 100px 60px 40px;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  transition: background-color 0.3s ease;
+}
+
+.settings-container.dark {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+.settings-heading {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #1e293b;
+}
+
+.settings-container.dark .settings-heading {
+  color: #f1f5f9;
+}
+
+.settings-section {
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.settings-container.dark .settings-section {
+  background-color: #334155;
+}
+
+.settings-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+.settings-container.dark .settings-section h3 {
+  color: #e2e8f0;
+}
+
+.settings-input {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.settings-container.dark .settings-input {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #475569;
+}
+
+.preview {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.settings-container.dark .preview {
+  color: #cbd5e1;
+}
+
+.theme-toggle-btn {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #2563eb;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
