@@ -6,4 +6,5 @@ const PrivateRoutes = ({ element }) => {
   return isLoggedIn ? element : <Navigate to="/login" />;
 };
 
+
 export default PrivateRoutes;

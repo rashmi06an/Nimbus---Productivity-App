@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./Settings.css";
 
 export default function Settings() {
-  const [username, setUsername] = useState("User123");
   const [theme, setTheme] = useState("light");
   const navigate = useNavigate();
 
@@ -12,9 +11,7 @@ export default function Settings() {
     if (storedTheme) setTheme(storedTheme);
   }, []);
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
+
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -31,21 +28,6 @@ export default function Settings() {
   return (
     <div className={`settings-container ${theme}`}>
       <h1 className="settings-heading">Settings</h1>
-
-      {/* <div className="settings-section">
-        <h3>Profile Settings</h3>
-        <label htmlFor="username">Change Username:</label>
-        <input
-          id="username"
-          type="text"
-          value={username}
-          onChange={handleUsernameChange}
-          className="settings-input"
-        />
-        <p className="preview">
-          Preview: <strong>{username}</strong>
-        </p>
-      </div> */}
 
       <div className="settings-section">
         <h3>Theme Settings</h3>

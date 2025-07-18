@@ -11,6 +11,8 @@ import Timer from "./pages/Timer";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -22,7 +24,7 @@ function App() {
         <Routes>
           {/* Public route */}
           <Route path="/login" element={<Login />} />
-
+          <Route path="/signup" element={<Signup />} />
           {/* Protected routes */}
           <Route path="/" element={<PrivateRoutes element={<Home />} />} />
           <Route
@@ -50,7 +52,9 @@ function App() {
             element={<PrivateRoutes element={<Settings />} />}
           />
         </Routes>
+        
       </div>
+      <Footer />
     </Router>
   );
 }

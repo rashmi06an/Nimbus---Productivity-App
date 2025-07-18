@@ -15,7 +15,7 @@ function Home() {
     document.body.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
-  const testimonials = [];
+
 
   return (
     <div className="pagehome">
@@ -141,7 +141,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+<div><h4 className="blank">.</h4></div>
       {/* CTA SECTION */}
       <section className="cta-section">
         <div className="cta-container">
@@ -156,19 +156,10 @@ function Home() {
         </div>
       </section>
 
-      {/* OPTIONAL Testimonials from props */}
-      <div className="testimonials">
-        <h2 className="section-title"></h2>
-        <div className="testimonial-list">
-          {testimonials.map((item, index) => (
-            <div key={index} className="testimonial-card">
-              <p className="testimonial-feedback">"{item.feedback}"</p>
-              <p className="testimonial-name">- {item.name}</p>
-            </div>
-          ))}
+
+        
         </div>
-      </div>
-    </div>
+  
   );
 }
 

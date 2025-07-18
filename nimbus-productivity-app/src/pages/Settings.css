@@ -1,7 +1,7 @@
 .settings-container {
   padding: 100px 60px 40px;
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: #111531;
   transition: background-color 0.3s ease;
 }
 
@@ -13,7 +13,7 @@
 .settings-heading {
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 .settings-container.dark .settings-heading {
@@ -72,7 +72,7 @@
 .theme-toggle-btn {
   padding: 10px 16px;
   font-size: 1rem;
-  background-color: #3b82f6;
+  background-color: #13163c;
   color: white;
   border: none;
   border-radius: 8px;
@@ -86,7 +86,7 @@
 
 .logout-btn {
   padding: 10px 20px;
-  background-color: #f44336;
+  background-color: #15164f;
   color: white;
   border: none;
   border-radius: 6px;
