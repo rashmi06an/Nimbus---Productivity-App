@@ -28,7 +28,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Circle timer styling */
 .timer-circle-wrapper {
   display: flex;
   justify-content: center;
@@ -134,12 +133,9 @@
   margin-bottom: 1.5rem;
 }
 
-/* Bigger circle to fit timer text properly */
 .timer-circle {
   width: 240px;
-  /* ⬅️ Increased width */
   height: 240px;
-  /* ⬅️ Increased height */
   border-radius: 50%;
   background-color: white;
   border: 6px solid rgb(20, 20, 52);
@@ -149,10 +145,8 @@
   box-shadow: 0 6px 20px rgba(20, 20, 52, 0.15);
 }
 
-/* Timer text styling */
 .timer-display {
   font-size: 3rem;
-  /* ⬅️ Larger text */
   font-weight: bold;
   color: rgb(20, 20, 52);
   font-family: monospace;
@@ -169,9 +163,7 @@
   border-radius: 8px;
   cursor: pointer;
   width: 230px;
-  /* ⬅️ Increased from 100px */
   height: 50px;
-  /* ⬅️ Slightly taller */
   box-shadow: 0 4px 8px rgba(20, 20, 52, 0.4);
   font-size: 1rem;
   margin-top: 80;
@@ -230,7 +222,6 @@
   color: rgb(20, 20, 52);
   font-family: monospace;
   margin: 0;
-  /* Ensure no extra spacing */
 }
 
 .timer-circle {
@@ -313,7 +304,6 @@
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  /* space between the two boxes */
   margin-top: 2rem;
 }
 
@@ -357,7 +347,6 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  /* ✨ This ensures both boxes stretch equally */
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -366,7 +355,6 @@
   position: relative;
   overflow: hidden;
   background-color: #0e0d2b;
-  /* Same as your dark background */
 }
 
 .falling-icons {
@@ -387,7 +375,6 @@
   color: white;
 }
 
-/* Spread the icons randomly */
 .falling-icons .icon:nth-child(1) {
   top: 10%;
   left: 5%;
@@ -436,10 +423,7 @@
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  /* behind everything */
 }
-
-/* Reusable blob-like decorative circles */
 .decor-circle {
   position: absolute;
   width: 200px;
@@ -449,7 +433,6 @@
   border-radius: 50%;
 }
 
-/* Positioning for variety */
 .decor-circle.top-left {
   top: 5%;
   left: -80px;
@@ -533,7 +516,6 @@
   color: #333;
 }
 
-/* ======================= DARK THEME SUPPORT ======================= */
 .dark .pomodoro-container {
   background-color: #0e0d2b;
   color: white;
@@ -602,4 +584,28 @@
 
 .dark .custom-time-input button:hover {
   background-color: #5350a0;
+}
+@media (max-width: 768px) {
+  .pomodoro-box, .quick-tips, .focus-checklist, .info-box {
+    width: 100%;
+    padding: 1rem;
+  }
+  .timer-buttons, .bottom-row, .custom-time-input {
+    flex-direction: column;
+    align-items: center;
+  }
+  .timer-button, .custom-time-input input, .custom-time-input button {
+    width: 90%;
+  }
+  .timer-circle {
+    width: 160px;
+    height: 160px;
+  }
+  .timer-display {
+    font-size: 2rem;
+  }
+  .time-tracker-title, .pomodoro-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
 }

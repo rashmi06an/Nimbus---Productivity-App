@@ -45,7 +45,6 @@ const NotesPage = () => {
 
   return (
     <div className={`notes-page ${theme}`}>
-      {/* Top Header */}
       <div className="notes-header">
         <h2 className="notes-title">Notes</h2>
         <div className="notes-controls">
@@ -60,7 +59,6 @@ const NotesPage = () => {
       </div>
 
       <div className="notes-body">
-        {/* Left Sidebar */}
         <aside className="sidebar">
           <div className="tags-section">
             <h4 className="filter-heading">Filter by Tags</h4>
@@ -105,7 +103,6 @@ const NotesPage = () => {
           </div>
         </aside>
 
-        {/* Main Content Area */}
         <main className="note-content">
           {!selectedNote ? (
             <div className="empty-state">
@@ -134,8 +131,6 @@ const NotesPage = () => {
                   setNewNote({ ...newNote, content: e.target.value })
                 }
               />
-
-              {/* Select from existing tags */}
               {uniqueTags.length > 0 && (
                 <select
                   value={newNote.tag}
@@ -152,7 +147,6 @@ const NotesPage = () => {
                 </select>
               )}
 
-              {/* Or create a new tag */}
               <input
                 type="text"
                 placeholder="Or create a new tag"

@@ -70,9 +70,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   overflow-x: auto;
-  /* allows scroll */
   padding-bottom: 1rem;
-  /* space under scroll */
 }
 
 .features-section {
@@ -88,7 +86,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   margin: 0;
-  /* ⬅️ Make sure there’s no conflicting margin */
 }
 
 
@@ -110,7 +107,6 @@
   margin-bottom: 20px;
 }
 
-/* Custom color backgrounds for each feature icon */
 .icon-box.blue {
   background: linear-gradient(to right, #16053d, #dbd7d9);
 }
@@ -182,7 +178,6 @@
 
 .stars {
   color: #facc15;
-  /* Yellow stars */
   margin-bottom: 16px;
   font-size: 1rem;
 }
@@ -224,7 +219,6 @@ blockquote {
 
 .cta-section {
   background: rgb(20, 20, 52);
-  /* from-blue-600 to-purple-700 */
   padding: 80px 20px;
   text-align: center;
   color: rgb(235, 235, 239);
@@ -256,7 +250,6 @@ blockquote {
   padding: 16px 32px;
   background-color: white;
   color: rgb(20, 20, 52);
-  /* blue-600 */
   font-weight: 600;
   border-radius: 12px;
   text-decoration: none;
@@ -267,7 +260,6 @@ blockquote {
 
 .cta-button:hover {
   background-color: #f3f4f6;
-  /* light gray on hover */
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
@@ -280,7 +272,6 @@ blockquote {
   color: white;
 }
 
-/* === DARK THEME SUPPORT === */
 body.dark {
   background-color: #0f172a;
   color: #f1f5f9;
@@ -380,7 +371,6 @@ body.dark {
   background-color: #1e3a8a33;
 }
 
-/* Optional button hover highlight */
 .dark .primary-btn,
 .dark .cta-button,
 .dark .secondary-btn {

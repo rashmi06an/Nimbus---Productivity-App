@@ -41,4 +41,25 @@
   .nav-links li a:hover {
     text-decoration: underline;
   }
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 15px 20px;
+    }
+  
+    .navbar .logo {
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  
+    .nav-links {
+      justify-content: center;
+      gap: 15px;
+    }
+  
+    .nav-links li a {
+      font-size: 1rem;
+    }
+  }
   

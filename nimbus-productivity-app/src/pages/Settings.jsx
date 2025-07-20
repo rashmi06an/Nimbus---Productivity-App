@@ -16,7 +16,7 @@ export default function Settings() {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    localStorage.setItem("theme", newTheme); // Persist theme
+    localStorage.setItem("theme", newTheme); 
   };
 
   const handleLogout = () => {

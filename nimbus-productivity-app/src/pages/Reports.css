@@ -1,4 +1,4 @@
-/* Container */
+
 .reports-container {
   padding: 2rem;
   background-color: #10193c;
@@ -7,7 +7,6 @@
   color: #f6f8fa;
 }
 
-/* Heading */
 .reports-heading {
   text-align: center;
   font-size: 2.2rem;
@@ -15,7 +14,6 @@
   margin-bottom: 2rem;
 }
 
-/* Summary Section */
 .summary-section {
   display: flex;
   flex-wrap: wrap;
@@ -50,7 +48,6 @@
   color: #0d0e2f;
 }
 
-/* Chart Section */
 .chart-section {
   background-color: #ffffff;
   padding: 2rem;
@@ -65,7 +62,6 @@
   font-weight: 600;
 }
 
-/* Chart bars */
 .chart-bars {
   display: flex;
   align-items: flex-end;
@@ -100,7 +96,6 @@
   color: #091733;
 }
 
-/* Legend */
 .bar-legend {
   display: flex;
   justify-content: center;
@@ -130,7 +125,6 @@
   color: #091733;
 }
 
-/* Dark Theme Overrides */
 .reports-container.dark {
   background-color: #1e293b;
   color: #f1f5f9;

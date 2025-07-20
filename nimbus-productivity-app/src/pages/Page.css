@@ -1,5 +1,3 @@
-
-
  .primary-btn {
   background-color: #0d1a3f;
   color: white;
@@ -8,14 +6,12 @@
   border-radius: 6px;
   cursor: pointer;
  }
- 
- 
+
  .task-list {
   list-style: none;
   padding: 0;
  }
- 
- 
+
  .task-list li {
   display: flex;
   align-items: center;
@@ -26,12 +22,7 @@
  .task-text {
   margin-left: 8px;
  }
- 
- 
- 
- 
- 
- 
+
  .timer-input-group {
   display: flex;
   gap: 10px;
@@ -39,18 +30,15 @@
   align-items: center;
  }
  
- 
  .timer-page {
   text-align: center;
   padding: 40px 20px;
  }
  
- 
  .timer-title {
   font-size: 2.8rem;
   margin-bottom: 5px;
  }
- 
  
  .timer-subtitle {
   font-size: 1.2rem;
@@ -58,14 +46,12 @@
   color: #555;
  }
  
- 
  .timer-input-group {
   display: flex;
   gap: 12px;
   justify-content: center;
   align-items: center;
  }
- 
  
  .timer-input {
   width: 120px;
@@ -78,17 +64,14 @@
   transition: border-color 0.3s ease;
  }
  
- 
  .timer-input:focus {
   border-color: #007bff;
  }
- 
  
  .timer-start-btn {
   font-size: 1.1rem;
   padding: 10px 20px;
  }
- 
  
  .timer-stop-btn {
   font-size: 1.1rem;
@@ -96,7 +79,6 @@
   background-color: #e74c3c;
   border-color: #e74c3c;
  }
- 
  
  .timer-display {
   margin-top: 40px;
@@ -107,11 +89,9 @@
   user-select: none;
  }
  
- 
  .timer-display.time-up {
   color: #e74c3c;
  }
- 
  
  .about-hero {
  background-color:#1e3a8a;
@@ -119,29 +99,22 @@
  padding: 40px;
  text-align: center;
  transition-duration: 0.5s;
- 
- 
  }
  .about-hero{
  box-shadow: 0 10px 25px rgba(10, 10, 10, 0.15)
  }
- 
  
  .about-hero h1 {
  font-size: 28px;
  margin-bottom: 10px;
  }
  
- 
  .about-hero p {
  font-size: 16px;
  max-width: 600px;
  margin: 0 auto;
  }
- 
- 
- 
- 
+
  .about-body {
  background-color: white;
  padding: 30px;
@@ -150,45 +123,35 @@
  color: #333;
  }
  
- 
  .about-body h2 {
  font-size: 22px;
  margin-bottom: 10px;
  }
- 
  
  .about-body p {
  margin-bottom: 10px;
  font-size: 15px;
  line-height: 1.5;
  }
- 
- 
- 
- 
+
  .features {
  background-color: #f0f4ff;
  padding: 40px;
  text-align: center;
- 
- 
  }
- 
  
  .features h2 {
  font-size: 24px;
  color: #1e3a8a;
  margin-bottom: 20px;
  }
- 
- 
+
  .feature-grid {
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
  gap: 20px;
  }
- 
  
  .feature-card {
  background-color: white;
@@ -203,20 +166,17 @@
  box-shadow: 0 10px 25px rgba(10, 10, 10, 0.30)
  }
  
- 
  .feature-card h3 {
  font-size: 18px;
  color:#1e3a8a;
  margin-bottom: 10px;
  }
  
- 
  .feature-card p {
  font-size: 14px;
  color: #333;
  margin-bottom: 10px;
  }
- 
  
  .feature-card ul {
  padding-left: 18px;
@@ -551,11 +511,10 @@
   padding: 30px;
   margin: 40px auto;
   border-radius: 8px;
-  max-width: 1200px; /* <-- increased from typical 800-960px */
+  max-width: 1200px; 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: increase width of task item for consistency */
 .task-item {
   display: flex;
   align-items: flex-start;
@@ -566,7 +525,6 @@
   margin-bottom: 12px;
 }
 
-/* Optional: Make sure modal stays within wider layout */
 .modal {
   max-width: 200px;
   width: 100%;
@@ -574,9 +532,9 @@
 .page.tasks {
   background-color: white;
   padding: 40px;
-  margin: 40px 40px; /* reduces left and right margin */
+  margin: 40px 40px; 
   border-radius: 10px;
-  width: calc(100% - 120px); /* makes it almost full width */
+  width: calc(100% - 120px);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
 }
 .page.tasks {
@@ -591,10 +549,10 @@
 .page.tasks {
   background-color: white;
   padding: 40px;
-  margin: 40px 0 40px 40px; /* remove right margin completely */
+  margin: 40px 0 40px 40px; 
   border-radius: 10px;
   width: 94%;
-  max-width: none;           /* override any max-width */
+  max-width: none;           
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
 }
 .page.tasks {
@@ -615,7 +573,7 @@
   margin-bottom: 1rem;
 }
 
-/* Flex row for title and search */
+
 .page.tasks .top-row {
   display: flex;
   justify-content: space-between;
@@ -623,7 +581,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Search bar styling */
 .search-container {
   position: relative;
 }
@@ -644,7 +601,6 @@
   color: #888;
 }
 
-/* Task list */
 .task-list {
   list-style: none;
   padding: 0;
@@ -700,7 +656,6 @@
   font-weight: 500;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -843,14 +798,13 @@
   padding: 16px;
   margin-bottom: 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  gap: 12px; /* space between checkbox and details */
-  margin-left: 8px; /* <-- pushes card away from left edge */
+  gap: 12px; 
+  margin-left: 8px; 
 }
 
-/* OR specifically give space to the checkbox */
 .task-item input[type="checkbox"] {
-  margin-left: 8px; /* space between left border and checkbox */
-  margin-top: 5px;  /* optional vertical alignment tweak */
+  margin-left: 8px;
+  margin-top: 5px;  
 }
 .task-item {
   display: flex;
@@ -864,12 +818,11 @@
   margin-left: 8px;
   margin-right: 8px;
   gap: 12px;
-  border-left: 4px solid #1e3a8a; /* blue line */
-  border-right: 4px solid #1e3a8a; /* blue line */
+  border-left: 4px solid #1e3a8a; 
+  border-right: 4px solid #1e3a8a; 
   transition: border-color 0.3s ease;
 }
 
-/* Green borders when task is completed */
 .task-item.completed {
   border-left-color: green;
   border-right-color: green;
@@ -877,13 +830,13 @@
 .task-actions {
   display: flex;
   gap: 10px;
-  margin-right: 12px; /* shift away from right */
+  margin-right: 12px; 
 }
 
 .edit-button,
 .delete-button {
   padding: 6px 12px;
-  background-color: #1e3a8a; /* dark blue */
+  background-color: #1e3a8a; 
   color: white;
   border: none;
   border-radius: 6px;
@@ -894,7 +847,7 @@
 
 .edit-button:hover,
 .delete-button:hover {
-  background-color: #3f5fc3; /* lighter blue on hover */
+  background-color: #3f5fc3; 
 }
 .task-priority {
   padding: 2px 8px;
@@ -929,7 +882,7 @@
   font-size: 13px;
   border: 2px solid transparent;
   display: inline-block;
-  color: black; /* <-- Always black text */
+  color: black;
   background-color: transparent;
 }
 
@@ -951,7 +904,7 @@
   font-size: 13px;
   border: 2px solid transparent;
   display: inline-block;
-  color: black !important;  /* <-- Force text to black */
+  color: black !important;  
   background-color: transparent;
 }
 
@@ -973,14 +926,13 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
   max-width: 90%;
-  min-height: 600px; /* ← Increase this to expand downward */
-  display: flex;
+  min-height: 600px;
   flex-direction: column;
 }
 .tag-row button {
   padding: 9px 16px;
   margin-left: 8px;
-  background-color: #1e3a8a; /* Dark blue background */
+  background-color: #1e3a8a; 
   color: white;
   border: none;
   border-radius: 6px;
@@ -992,9 +944,9 @@
 }
 
 .tag-row button:hover {
-  background-color: #3b60d1; /* Light blue on hover */
+  background-color: #3b60d1; 
 }
-/* === Date Picker (Calendar) === */
+
 .date-picker {
   padding: 8px 12px;
   border: 1px solid #d1d5db;
@@ -1009,15 +961,14 @@
 }
 
 .date-picker:hover {
-  border-color: #60a5fa; /* Light blue on hover */
+  border-color: #60a5fa; 
 }
 
 .date-picker:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3); /* subtle blue focus ring */
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3); 
 }
 
-/* === Filter Tags Dropdown === */
 .filter-tags select {
   padding: 8px 12px;
   font-size: 14px;
@@ -1045,20 +996,19 @@
   justify-content: flex-end;
 }
 .task-item.completed {
-  border-left: 4px solid #10b981; /* Green */
+  border-left: 4px solid #10b981; 
   border-right: 4px solid #10b981;
-  background-color: #f0fdf4; /* subtle green background */
+  background-color: #f0fdf4; 
 }
-/* Filter + toggle section layout */
+
 .filter-tags {
   display: flex;
   align-items: center;
-  gap: 16px; /* space between dropdown and button */
+  gap: 16px; 
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* Adjust dropdown */
 .filter-tags select {
   padding: 8px 12px;
   border-radius: 4px;
@@ -1066,8 +1016,6 @@
   background: white;
   font-size: 14px;
 }
-
-/* Toggle button styles */
 .toggle-completed-btn {
   padding: 8px 14px;
   font-size: 14px;
@@ -1085,7 +1033,7 @@
 .toggle-completed-btn:hover {
   background-color: #162e6e;
 }
-/* Priority badge with border color only */
+
 .task-priority-box {
   display: inline-block;
   padding: 3px 10px;
@@ -1096,22 +1044,21 @@
   background-color: transparent;
 }
 
-/* Color-coded borders */
 .task-priority-box.low {
-  border-color: #facc15;     /* Yellow */
+  border-color: #facc15;    
 
 }
 
 .task-priority-box.medium {
-  border-color: #f97316;     /* Orange */
+  border-color: #f97316;     
 
 }
 
 .task-priority-box.high {
-  border-color: #ef4444;     /* Red */
+  border-color: #ef4444;    
 
 }
-/* This will strike through everything inside a completed task */
+
 .task-item.done .task-text,
 .task-item.done .task-description,
 .task-item.done .task-meta,

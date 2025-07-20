@@ -19,7 +19,6 @@ function Home() {
 
   return (
     <div className="pagehome">
-      {/* HERO SECTION */}
       <div className="hero">
         <h1 className="mainline">Boost Your Productivity with Nimbus</h1>
         <p className="subtitle">
@@ -40,7 +39,6 @@ function Home() {
         </div>
       </div>
 
-      {/* FEATURES SECTION */}
       <section className="features-section">
         <div className="features-header">
           <h2>Powerful Features for Maximum Productivity</h2>
@@ -83,8 +81,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* TESTIMONIALS SECTION */}
       <section className="testimonials-section">
         <div className="testimonials-header">
           <h2>What Our Users Say</h2>
@@ -142,7 +138,6 @@ function Home() {
         </div>
       </section>
 <div><h2 className="blank">.</h2></div>
-      {/* CTA SECTION */}
       <section className="cta-section">
         <div className="cta-container">
           <h2>Ready to Transform Your Productivity?</h2>
@@ -155,9 +150,6 @@ function Home() {
           </a>
         </div>
       </section>
-
-
-        
         </div>
   
   );

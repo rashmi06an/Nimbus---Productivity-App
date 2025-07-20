@@ -10,13 +10,12 @@ function Signup() {
 
   const handleSignup = () => {
     if (username && password) {
-      // Check if user already exists
       const existingUser = JSON.parse(localStorage.getItem("user"));
       if (existingUser && existingUser.username === username) {
         alert("User already exists. Please log in.");
         navigate("/login");
       } else {
-        // Save new user to localStorage
+
         localStorage.setItem("user", JSON.stringify({ username, password }));
         alert("Signup successful! Please log in.");
         navigate("/login");

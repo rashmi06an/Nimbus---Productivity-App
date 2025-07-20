@@ -6,20 +6,18 @@ function TimerPage() {
   const [duration, setDuration] = useState(25);
   const [timeLeft, setTimeLeft] = useState(duration * 60);
   const [customInput, setCustomInput] = useState(duration);
-  const [theme, setTheme] = useState("light"); // 🔥 get theme from localStorage
+  const [theme, setTheme] = useState("light"); 
 
   const intervalRef = useRef(null);
   const beep = useRef(
     new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg")
   );
 
-  // 👇 On component mount, get theme from localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
   }, []);
 
-  // Timer logic
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {

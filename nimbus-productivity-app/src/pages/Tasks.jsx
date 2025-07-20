@@ -19,7 +19,6 @@ function Tasks() {
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light"
   );
-
   const [form, setForm] = useState({
     text: "",
     description: "",
@@ -29,12 +28,9 @@ function Tasks() {
     tags: [],
   });
 
-  // Theme application based on theme state
   useEffect(() => {
     document.body.classList.toggle("dark", theme === "dark");
   }, [theme]);
-
-  // Listen for theme change from other tabs/components
   useEffect(() => {
     const handleStorageChange = () => {
       const newTheme = localStorage.getItem("theme") || "light";
@@ -44,7 +40,6 @@ function Tasks() {
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  // Load tasks from localStorage
   useEffect(() => {
     try {
       const stored = localStorage.getItem("nimbus_tasks");
@@ -170,7 +165,6 @@ function Tasks() {
 
   return (
     <div className={`page tasks ${theme === "dark" ? "dark" : ""}`}>
-      {/* Header */}
       <div className="top-row">
         <div>
           <h1 className="namemanager">Task Manager</h1>
@@ -200,7 +194,6 @@ function Tasks() {
         </div>
       </div>
 
-      {/* Filter + Toggle */}
       <div className="filter-tags">
         <select
           onChange={(e) => setFilterTag(e.target.value)}
@@ -223,7 +216,6 @@ function Tasks() {
         </button>
       </div>
 
-      {/* Task List */}
       {filteredTasks.length === 0 ? (
         <div className="no-tasks-box">
           <p className="no-tasks-text">
@@ -290,7 +282,6 @@ function Tasks() {
         </ul>
       )}
 
-      {/* Modal */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal">
@@ -380,5 +371,4 @@ function Tasks() {
     </div>
   );
 }
-
 export default Tasks;

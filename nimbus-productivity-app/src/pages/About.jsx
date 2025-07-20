@@ -7,7 +7,6 @@ function About() {
   });
 
   useEffect(() => {
-    // Apply or remove dark class to body based on theme
     document.body.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
 
@@ -17,14 +16,12 @@ function About() {
       setIsDarkMode(newTheme === "dark");
     };
 
-    // Listen to changes in theme (from other components)
     window.addEventListener("storage", handleStorageChange);
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   return (
     <div>
-      {/* Hero Section */}
       <section className="hero">
         <h1>About Nimbus</h1>
         <p className="subtext">
@@ -34,7 +31,6 @@ function About() {
         </p>
       </section>
 
-      {/* Overview Section */}
       <section className="overview">
         <h2 className="name">Why We Built Nimbus</h2>
         <div className="content">
@@ -58,8 +54,6 @@ function About() {
           </p>
         </div>
       </section>
-
-      {/* Key Features Section */}
       <section className="key-features-section">
         <h2 className="section-title">Key Features</h2>
         <div className="features-grid">
@@ -120,7 +114,6 @@ function About() {
         </div>
       </section>
 
-      {/* Productivity Tips Section */}
       <section className="productivity-section">
         <div className="container">
           <div className="title">
@@ -181,7 +174,6 @@ function About() {
         </div>
       </section>
 
-      {/* Join Section */}
       <section className="join-section">
         <h3 className="join-title">Join Us on This Journey</h3>
         <p className="join-description">

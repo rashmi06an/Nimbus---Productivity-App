@@ -7,7 +7,6 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-grid">
-          {/* Brand Section */}
           <div className="footer-brand">
             <div className="footer-logo">
               <Cloud className="icon-white logo-icon" />
@@ -17,14 +16,10 @@ export default function Footer() {
               Smart Task & Time Tracker that helps you boost productivity and manage your time effectively.
             </p>
             <div className="social-icons">
-              
-              
               <a href="#" aria-label="Twitter"><Twitter className="icon-white" /></a>
               <a href="#" aria-label="Email"><Mail className="icon-white" /></a>
             </div>
           </div>
-
-          {/* Features Column */}
           <div className="footer-column">
             <h3 className="footer-title">Features</h3>
             <ul className="footer-links">
@@ -37,7 +32,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Text */}
         <div className="footer-bottom">
           <p>&copy; 2025 Nimbus. All rights reserved.</p>
         </div>

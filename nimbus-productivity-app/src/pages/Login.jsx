@@ -8,7 +8,6 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    // Simple validation (in real-world, you should hash and secure this)
     if (username && password) {
       localStorage.setItem("user", JSON.stringify({ username, password }));
       localStorage.setItem("isLoggedIn", "true");
