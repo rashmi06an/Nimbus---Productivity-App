@@ -53,7 +53,7 @@
   display: flex;
   gap: 15px;
 }
-
+ 
 .social-icons a {
   color: #f1f5f9;
   transition: color 0.3s ease;

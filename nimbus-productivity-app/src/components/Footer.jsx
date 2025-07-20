@@ -17,7 +17,8 @@ export default function Footer() {
               Smart Task & Time Tracker that helps you boost productivity and manage your time effectively.
             </p>
             <div className="social-icons">
-              <a href="#" aria-label="GitHub"><Github className="icon-white" /></a>
+              
+              
               <a href="#" aria-label="Twitter"><Twitter className="icon-white" /></a>
               <a href="#" aria-label="Email"><Mail className="icon-white" /></a>
             </div>
@@ -27,23 +28,13 @@ export default function Footer() {
           <div className="footer-column">
             <h3 className="footer-title">Features</h3>
             <ul className="footer-links">
-              <li><a href="#">Task Management</a></li>
-              <li><a href="#">Time Tracking</a></li>
-              <li><a href="#">Pomodoro Timer</a></li>
-              <li><a href="#">Productivity Reports</a></li>
+              <li><a href="/Tasks">Task Management</a></li>
+              <li><a href="/Timer">Time Tracking</a></li>
+              <li><a href="/Reports">Productivity Reports</a></li>
             </ul>
           </div>
 
-          {/* Resources Column */}
-          <div className="footer-column">
-            <h3 className="footer-title">Resources</h3>
-            <ul className="footer-links">
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">Tutorials</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Support</a></li>
-            </ul>
-          </div>
+
         </div>
 
         {/* Bottom Text */}

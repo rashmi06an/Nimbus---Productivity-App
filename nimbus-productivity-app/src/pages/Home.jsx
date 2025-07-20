@@ -141,7 +141,7 @@ function Home() {
           </div>
         </div>
       </section>
-<div><h4 className="blank">.</h4></div>
+<div><h2 className="blank">.</h2></div>
       {/* CTA SECTION */}
       <section className="cta-section">
         <div className="cta-container">

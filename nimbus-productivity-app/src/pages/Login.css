@@ -2,7 +2,7 @@
     max-width: 400px;
     margin: 60px auto;
     padding: 40px;
-    background-color: #ffffff;
+    background-color: #0e1536;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -11,7 +11,7 @@
 .login-container h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #fbf7f7;
 }
 
 .login-container input {
