@@ -1,0 +1,473 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #111;
+  line-height: 1.6;
+
+}
+
+.overview {
+  text-align: center;
+}
+
+.name {
+  color: rgb(20, 20, 52);
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 20px;
+}
+
+.hero {
+  background: rgb(20, 20, 52);
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+
+}
+
+.subtext {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+
+.overview .content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.features {
+  background-color: darkblue;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Two cards per row */
+  gap: 32px;
+  /* Space between the cards */
+
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.features .card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  /* light blue shadow by default */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.features .card:hover {
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+  /* deeper blue on hover */
+  transform: translateY(-4px);
+}
+
+.features-grid,
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.card ul,
+.card ol {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.tips .button-center,
+.team .button-center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.primary-btn {
+  display: inline-block;
+  background: #1e3a8a;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primary-btn:hover {
+  background: rgb(20, 20, 52);
+}
+
+.team .role {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  color: #333;
+}
+
+.key-features-section {
+  padding: 60px 20px;
+  background-color: #f1f5f9;
+  color: #160950;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+  transition: box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.3);
+}
+
+.feature-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  width: fit-content;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.feature-icon.blue {
+  background: #160950;
+}
+
+.feature-icon.green {
+  background: #160950;
+}
+
+.feature-icon.purple {
+  background-color: #160950;
+}
+
+.feature-icon.orange {
+  background-color: #160950;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.feature-desc {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.feature-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.feature-list li {
+  margin-bottom: 6px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns */
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+  /* Optional: enable horizontal scroll on smaller screens */
+}
+
+@media (max-width: 1199px) {
+  .features-grid {
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
+    overflow-x: auto;
+  }
+
+  .feature-card {
+    min-width: 280px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.productivity-section {
+  padding: 60px 20px;
+  background-color: #fefefe;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tip-card {
+  background-color: #f9fafb;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+}
+
+.tip-card h3 {
+  font-size: 1.4rem;
+  color: rgb(20, 20, 52);
+  margin-bottom: 10px;
+  border: 10px;
+  border-radius: 10%;
+}
+
+.tip-card p {
+  color: rgb(20, 20, 52);
+  margin-bottom: 15px;
+}
+
+.tip-card ol,
+.tip-card ul {
+  padding-left: 20px;
+  color: rgb(20, 20, 52);
+
+}
+
+.tip-card li {
+  margin-bottom: 8px;
+}
+
+.button-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.primary-button {
+  background-color: #1e3a8a;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #0f255e;
+}
+
+.productivity-section {
+  background-color: rgb(253, 253, 253);
+}
+
+.section-title {
+  color: rgb(13, 17, 53);
+}
+
+.title {
+  color: rgb(20, 20, 52);
+  text-align: center;
+  font-size: large;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.join-section {
+  max-width: 768px;
+  margin: 100px auto 60px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.join-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(20, 20, 52);
+  margin-bottom: 20px;
+}
+
+.join-description {
+  color: rgb(20, 20, 52);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.join-button {
+  background-color: rgb(20, 20, 52);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+  background-color: #162d67;
+}
+
+/* Dark Theme Support */
+body.dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+.dark .hero {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+.dark .overview .content,
+.dark .productivity-section,
+.dark .join-section,
+.dark .features,
+.dark .key-features-section {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+.dark .features .card,
+.dark .feature-card,
+.dark .tip-card,
+.dark .card {
+  background-color: #334155;
+  color: #f1f5f9;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark .card .icon,
+.dark .feature-icon {
+  background-color: #475569;
+  color: #e2e8f0;
+}
+
+.dark .section-title,
+.dark .feature-title,
+.dark .tip-card h3,
+.dark .tip-card p,
+.dark .tip-card li,
+.dark .join-title,
+.dark .join-description,
+.dark .title,
+.dark .feature-desc,
+.dark .feature-list {
+  color: #e2e8f0;
+}
+
+.dark .note-tag,
+.dark .note-date,
+.dark .team .role {
+  color: #cbd5e1;
+}
+
+.dark .primary-btn,
+.dark .primary-button,
+.dark .join-button {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.dark .primary-btn:hover,
+.dark .primary-button:hover,
+.dark .join-button:hover {
+  background-color: #2563eb;
+}
+
+.dark .features .card:hover,
+.dark .feature-card:hover {
+  box-shadow: 0 8px 30px rgba(147, 197, 253, 0.2);
+}
+
+.dark .tip-card {
+  background-color: #334155;
+}
+
+/* Optional: border color adjustments if used */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #475569;
+}

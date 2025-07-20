@@ -1,0 +1,343 @@
+/* General Page Styling */
+.notes-page {
+  font-family: sans-serif;
+  padding: 24px;
+  background-color: #0d113d;
+  color: #f6f6f6;
+  height: 700px;
+}
+
+/* Header Row */
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.notes-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fcfdff;
+}
+
+.notes-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.notes-controls input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.notes-controls button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.notes-controls button:hover {
+  background-color: #274aa9;
+}
+
+/* Main Layout */
+.notes-body {
+  display: flex;
+  gap: 24px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+}
+
+/* Tags Filter Box */
+.tags-section {
+  background-color: #dee5f9;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #19175a;
+  margin-bottom: 10px;
+}
+
+.tag-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-buttons button {
+  padding: 6px 12px;
+  background-color: white;
+  border: 1px solid #1e3a8a;
+  color: #0a1a44;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.tag-buttons button.active,
+.tag-buttons button:hover {
+  background-color: #c4cbe7;
+}
+
+.clear {
+  background-color: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+/* Notes List */
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-item {
+  background-color: white;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.note-item.selected {
+  border: 2px solid #1e3a8a;
+  background-color: #f0f4ff;
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.note-tag {
+  font-size: 12px;
+  color: #475569;
+}
+
+.note-date {
+  font-size: 10px;
+  text-align: right;
+  color: #64748b;
+}
+
+/* Right Panel */
+.note-content {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  color: #475569;
+}
+
+.empty-state button {
+  margin-top: 12px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.empty-state button:hover {
+  background-color: #274aa9;
+}
+
+/* Form Styling */
+.note-form input,
+.note-form textarea,
+.note-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.note-form button {
+  margin-right: 10px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.note-form button:hover {
+  background-color: #274aa9;
+}
+
+/* Note Detail */
+.note-detail h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.note-detail p {
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+.note-detail .note-tag {
+  font-size: 13px;
+  color: #475569;
+}
+
+.note-date-view {
+  text-align: right;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 10px;
+}
+
+/* Dark Theme Overrides */
+.notes-page.dark {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Header */
+.notes-page.dark .notes-title {
+  color: #f8fafc;
+}
+
+.notes-page.dark .notes-controls input {
+  background-color: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+.notes-page.dark .notes-controls button {
+  background-color: #3b82f6;
+}
+
+.notes-page.dark .notes-controls button:hover {
+  background-color: #2563eb;
+}
+
+/* Sidebar */
+.notes-page.dark .tags-section {
+  background-color: #334155;
+}
+
+.notes-page.dark .filter-heading {
+  color: #e2e8f0;
+}
+
+.notes-page.dark .tag-buttons button {
+  background-color: transparent;
+  color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.notes-page.dark .tag-buttons button.active,
+.notes-page.dark .tag-buttons button:hover {
+  background-color: #475569;
+}
+
+/* Notes List */
+.notes-page.dark .note-item {
+  background-color: #1e293b;
+  border: 1px solid #475569;
+}
+
+.notes-page.dark .note-item.selected {
+  border: 2px solid #3b82f6;
+  background-color: #334155;
+}
+
+.notes-page.dark .note-title {
+  color: #60a5fa;
+}
+
+.notes-page.dark .note-tag {
+  color: #cbd5e1;
+}
+
+.notes-page.dark .note-date {
+  color: #94a3b8;
+}
+
+/* Right Panel */
+.notes-page.dark .note-content {
+  background-color: #334155;
+}
+
+/* Empty State */
+.notes-page.dark .empty-state {
+  color: #cbd5e1;
+}
+
+.notes-page.dark .empty-state button {
+  background-color: #3b82f6;
+}
+
+.notes-page.dark .empty-state button:hover {
+  background-color: #2563eb;
+}
+
+/* Form */
+.notes-page.dark .note-form input,
+.notes-page.dark .note-form textarea,
+.notes-page.dark .note-form select {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+
+.notes-page.dark .note-form button {
+  background-color: #3b82f6;
+}
+
+.notes-page.dark .note-form button:hover {
+  background-color: #2563eb;
+}
+
+/* Note Detail */
+.notes-page.dark .note-detail h2 {
+  color: #60a5fa;
+}
+
+.notes-page.dark .note-detail p {
+  color: #e2e8f0;
+}
+
+.notes-page.dark .note-detail .note-tag {
+  color: #cbd5e1;
+}
+
+.notes-page.dark .note-date-view {
+  color: #94a3b8;
+}
