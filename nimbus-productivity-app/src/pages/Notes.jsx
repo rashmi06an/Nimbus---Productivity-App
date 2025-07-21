@@ -171,6 +171,7 @@ const NotesPage = () => {
             </div>
           )}
         </main>
+
       </div>
     </div>
   );

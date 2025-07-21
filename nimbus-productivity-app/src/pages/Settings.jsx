@@ -11,8 +11,6 @@ export default function Settings() {
     if (storedTheme) setTheme(storedTheme);
   }, []);
 
-
-
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);

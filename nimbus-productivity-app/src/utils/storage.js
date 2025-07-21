@@ -4,7 +4,6 @@ const STORAGE_KEYS = {
 };
 
 export const storage = {
-  // Get tasks from localStorage (flat list)
   getTasks: () => {
     const raw = localStorage.getItem(STORAGE_KEYS.TASKS);
     if (!raw) return [];
@@ -19,7 +18,6 @@ export const storage = {
     }));
   },
 
-  // Save full tasksByDate object
   saveTasks: (tasksByDate) => {
     localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(tasksByDate));
   },

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import PrivateRoutes from "./components/PrivateRoutes"; // Import the wrapper
+import PrivateRoutes from "./components/PrivateRoutes"; 
 
 import Home from "./pages/Home";
 import Tasks from "./pages/Tasks";
@@ -22,10 +22,8 @@ function App() {
       <Navbar />
       <div className="main-content">
         <Routes>
-          {/* Public route */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          {/* Protected routes */}
           <Route path="/" element={<PrivateRoutes element={<Home />} />} />
           <Route
             path="/tasks"
